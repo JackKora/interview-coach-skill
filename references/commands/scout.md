@@ -57,6 +57,7 @@ For each URL in the Scout Config:
    - **How to decide**: After reading the search page, check whether you have at least a job title, company, AND either a description snippet or a requirements list. If yes → Tier 1. If you only have title + company with no detail → Tier 2.
    - **Tier 2 optimization**: When clicking through, extract only what's needed for scoring (title, company, seniority, requirements, comp if shown). Don't read the entire page in depth — get the facts and move on.
 
+<<<<<<< HEAD
 ### Token Efficiency Protocol
 
 These rules minimize token usage across scout runs. Follow them on every scan.
@@ -73,6 +74,8 @@ If the first 10-15 listings on a search page are all already tracked (present in
 **Rule 4: Batch assessment.**
 Collect all new (unseen) listings across all URLs first, then do one consolidated scoring pass against the candidate's profile. Profile context is loaded once in Step 1 — don't re-read `coaching_state.md` per listing.
 
+=======
+>>>>>>> 65ad120 (adding scout capability)
 **Step 3: Deduplication**
 For each extracted listing, check whether `title + company` (case-insensitive) already exists in:
 - `coaching_state.md` Scout Opportunities table (above-threshold)
