@@ -16,7 +16,7 @@ A lightweight alternative to `prep` for when the candidate wants to understand a
 
 1. Ask for company name and the candidate's target role type (if not already in coaching state).
 2. Research publicly available information. Follow the same Company Knowledge Sourcing tiers from `prep` — Tier 1 (verified), Tier 2 (general knowledge), Tier 3 (unknown/say so).
-3. Assess fit against the candidate's profile (from `coaching_state.md` if available, or from what they've told you).
+3. Assess fit against the candidate's profile (from `coaching_state/profile.md` if available, or from what they've told you).
 4. Output the research brief.
 
 ### Research Depth Levels
@@ -120,7 +120,7 @@ Use the Role-Fit Assessment Module from `references/cross-cutting.md`. Without a
 
 ### Staleness Detection
 
-When `research` is run for a company that already has a research entry in coaching_state.md, check the date:
+When `research` is run for a company that already has a research entry in `coaching_state/interviews.md`, check the date:
 - **< 2 weeks old**: "I researched [Company] on [date]. Want me to refresh, or is that still current?"
 - **2-8 weeks old**: "My research on [Company] is [N] weeks old. Companies change — want a refresh? I'll focus on what's new since [date]."
 - **> 8 weeks old**: Auto-refresh. "My research on [Company] is [N] weeks old — that's stale. Let me update it." Run the full research protocol again, noting what changed vs. the previous entry.
@@ -129,7 +129,7 @@ When refreshing, preserve the previous fit verdict and explicitly compare: "Last
 
 ### Coaching State Integration
 
-After research, save a lightweight entry to `coaching_state.md` Interview Loops:
+After research, save a lightweight entry to `coaching_state/interviews.md` Interview Loops:
 ```
 ### [Company Name]
 - Status: Researched (not yet applied)

@@ -86,7 +86,7 @@ Structure the transcript for systematic analysis. The parsing approach depends o
 ### Step 2.0: Format Detection
 
 Determine the interview format using this priority chain:
-1. **Coaching state**: Check `coaching_state.md` → Interview Loops → Round formats for this company/round.
+1. **Coaching state**: Check `coaching_state/interviews.md` → Interview Loops → Round formats for this company/round.
 2. **Candidate statement**: The candidate may have told you the format in conversation.
 3. **Transcript inference**: Panel interviews have 3+ speakers. System design transcripts have long candidate monologues with probing follow-ups. Technical+behavioral mix shows distinct mode switches.
 4. **Ask**: If ambiguous, ask: "What type of interview was this — behavioral, system design, panel, or a mix?"
@@ -608,7 +608,7 @@ MODE ANALYSIS:
 
 ## Step 5: Update Coaching State
 
-After analysis, update `coaching_state.md` per the State Update Triggers in SKILL.md:
+After analysis, update the relevant `coaching_state/` files per the State Update Triggers in SKILL.md:
 
 1. **Score History**: Add a row with the interview scores, Type: interview, and Hire Signal from the overall assessment.
 2. **Active Coaching Strategy**: Write or update the strategy based on the triage decision (see Step 15 in `references/commands/analyze.md`). Preserve Previous approaches when changing strategy.

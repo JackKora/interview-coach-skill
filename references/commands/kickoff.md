@@ -61,7 +61,7 @@ After resume analysis, check whether the candidate's target role represents a ca
 - **Prep**: `prep` should expect interviewers to probe the transition — it will dominate at least one question.
 - **Comp**: `salary` should flag that transitions often involve comp recalibration — the candidate's current comp may not be a useful anchor for the new role.
 
-Save to coaching_state.md Profile:
+Save to `coaching_state/profile.md` Profile:
 ```
 - Career transition: [type — function change / domain shift / IC↔management / industry pivot / career restart]
 - Transition narrative status: [not yet developed / in progress / strong]
@@ -88,7 +88,7 @@ After resume analysis, cross-reference the candidate's profile against their sta
 
 ### Step 3: Initialize Coaching State
 
-Write the initial `coaching_state.md` file (see SKILL.md Session State System for format) with:
+Write the initial `coaching_state/` directory files (see SKILL.md Session State System for format) with:
 - Profile section populated from Steps 1-2
 - Resume Analysis section populated from Step 2.5 output (positioning strengths, likely concerns, career narrative gaps, story seeds). This is critical — every downstream command (`concerns`, `prep`, `stories`, `hype`) benefits from having the resume analysis persisted. Don't lose this work.
 - Empty storybank (or populated if initial stories were provided — if initial stories are provided, write full STAR text to the Story Details section)
@@ -106,7 +106,7 @@ Candidates' targets often evolve mid-search — they discover they prefer a diff
 
 1. **Don't restart from scratch.** Ask: "What's changed? Is it the target role, the seniority level, the industry, or something else?"
 2. **Show what carries over**: "Your storybank, practice scores, and coaching patterns all still apply. Here's what changes with your new target:"
-3. **Update Profile in coaching_state.md**: Target role, seniority band, career transition status (if newly triggered).
+3. **Update Profile in `coaching_state/profile.md`**: Target role, seniority band, career transition status (if newly triggered).
 4. **Flag downstream impacts**:
    - If target role changed: `concerns` needs re-running (different role = different concerns). `pitch` positioning statement needs updating. `resume` may need re-targeting.
    - If seniority changed: `prep` scoring weights shift. Practice drill calibration may need adjustment.

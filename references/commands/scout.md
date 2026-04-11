@@ -15,7 +15,7 @@ Automated job search scanner that reads preconfigured search URLs via Chrome, id
 ### Prerequisites
 
 - **Hard dependency**: Must run in a Chrome-enabled environment (Cowork with Claude Chrome Extension). The command reads live job search result pages via the browser.
-- **Hard dependency**: `coaching_state.md` must exist with a Profile section (target roles, seniority band). Without a profile, there's nothing to score fit against.
+- **Hard dependency**: `coaching_state/profile.md` must exist with a Profile section (target roles, seniority band). Without a profile, there's nothing to score fit against.
 - **Soft dependency**: Resume Analysis improves scoring accuracy (skills matching).
 - **Soft dependency**: Storybank improves scoring accuracy (competency coverage).
 - **Soft dependency**: Comp Strategy enables comp matching (when listings include salary).
@@ -29,7 +29,7 @@ Automated job search scanner that reads preconfigured search URLs via Chrome, id
 ### Sequence
 
 **Step 1: Load Context**
-Read `coaching_state.md`. Extract:
+Read the relevant `coaching_state/` files. Extract:
 - Profile (target roles, seniority band, career transition)
 - Resume Analysis (positioning strengths, likely concerns)
 - Storybank (skills coverage — Primary Skill and Secondary Skill columns)
@@ -37,7 +37,7 @@ Read `coaching_state.md`. Extract:
 - Scout Config (search URLs, threshold)
 - Scout Opportunities (already-seen jobs — title + company combos)
 
-Also check `opportunities_bad_fit.md` for previously seen below-threshold jobs.
+Also check `coaching_state/opportunities_bad_fit.md` for previously seen below-threshold jobs.
 
 **Step 2: Read Search Pages**
 For each URL in the Scout Config:
@@ -66,20 +66,20 @@ These rules minimize token usage across scout runs. Follow them on every scan.
 Use `get_page_text` or `read_page` as the standard extraction method for all job board pages. Job boards render content as HTML text — screenshots are never needed. A single text call replaces 4-6 screenshot + scroll cycles per URL. Fall back to screenshots only if text extraction returns empty or garbled content (rare for any major job board).
 
 **Rule 2: Quick-pass dedup before deep reading.**
-On each search page, do a fast title + company scan first. Cross-reference against `opportunities_bad_fit.md` and the Scout Opportunities table in `coaching_state.md` before clicking into or evaluating any listing. Only deep-read (click through, extract full details, evaluate fit) listings that aren't already tracked. Report skip count in the Scan Summary.
+On each search page, do a fast title + company scan first. Cross-reference against `coaching_state/opportunities_bad_fit.md` and the Scout Opportunities table in `coaching_state/opportunities.md` before clicking into or evaluating any listing. Only deep-read (click through, extract full details, evaluate fit) listings that aren't already tracked. Report skip count in the Scan Summary.
 
 **Rule 3: Early termination when no new listings found.**
 If the first 10-15 listings on a search page are all already tracked (present in bad_fit or Scout Opportunities), stop scrolling that URL. Job boards sort by recency — if the top results are all known, deeper results will be too. Exception: if the search URL uses a non-date sort order (e.g., relevance), scroll fully.
 
 **Rule 4: Batch assessment.**
-Collect all new (unseen) listings across all URLs first, then do one consolidated scoring pass against the candidate's profile. Profile context is loaded once in Step 1 — don't re-read `coaching_state.md` per listing.
+Collect all new (unseen) listings across all URLs first, then do one consolidated scoring pass against the candidate's profile. Profile context is loaded once in Step 1 — don't re-read `coaching_state/` per listing.
 
 =======
 >>>>>>> 65ad120 (adding scout capability)
 **Step 3: Deduplication**
 For each extracted listing, check whether `title + company` (case-insensitive) already exists in:
-- `coaching_state.md` Scout Opportunities table (above-threshold)
-- `opportunities_bad_fit.md` (below-threshold)
+- `coaching_state/opportunities.md` Scout Opportunities table (above-threshold)
+- `coaching_state/opportunities_bad_fit.md` (below-threshold)
 
 Skip any already-seen listings. Report the skip count at the end.
 
@@ -114,14 +114,14 @@ For each new listing, score fit on a 1-5 scale using these factors:
 **Step 5: Store Results**
 Split results by the candidate's configured threshold:
 
-**Above threshold** → Add to `coaching_state.md` Scout Opportunities table:
+**Above threshold** → Add to `coaching_state/opportunities.md` Scout Opportunities table:
 ```
 | Date | Company | Title | Score | Rationale | URL | Status |
 ```
 - Status starts as "New"
 - URL is the listing URL if available, otherwise blank
 
-**Below threshold** → Add to `opportunities_bad_fit.md`:
+**Below threshold** → Add to `coaching_state/opportunities_bad_fit.md`:
 ```
 | Date | Company | Title | Score | Rationale |
 ```
@@ -138,13 +138,13 @@ When the candidate first runs `scout` (or when no URLs are configured), walk the
 1. "What job search sites are you using? (LinkedIn, Indeed, Glassdoor, etc.)"
 2. "For each site, set up a search with your criteria (role, location, experience level, etc.) and give me the URL of the search results page."
 3. "What fit threshold should I use? Jobs scoring at or above this number will be surfaced to you. I recommend starting with 3 (Moderate Fit and above)." Accept 1-5.
-4. Store URLs and threshold in coaching_state.md Scout Config section.
+4. Store URLs and threshold in `coaching_state/opportunities.md` Scout Config section.
 
 **Important**: The candidate configures their own search criteria on each job site. Scout doesn't try to construct searches — it reads whatever results the candidate's preconfigured searches return.
 
 ### Threshold Adjustment
 
-If the candidate asks to change their threshold: update Scout Config and re-evaluate any stored opportunities that cross the new boundary. Move newly-qualifying opportunities from `opportunities_bad_fit.md` to `coaching_state.md` (with Status: "New"), and vice versa.
+If the candidate asks to change their threshold: update Scout Config and re-evaluate any stored opportunities that cross the new boundary. Move newly-qualifying opportunities from `coaching_state/opportunities_bad_fit.md` to `coaching_state/opportunities.md` (with Status: "New"), and vice versa.
 
 ### Output Schema
 
@@ -160,7 +160,7 @@ If the candidate asks to change their threshold: update Scout Config and re-eval
 | ... | | | | |
 
 ### Below Threshold ([count] new listings scored below [threshold])
-[Not shown in detail — stored in opportunities_bad_fit.md for dedup.]
+[Not shown in detail — stored in coaching_state/opportunities_bad_fit.md for dedup.]
 
 ### Scan Summary
 - URLs scanned: [count]
@@ -186,7 +186,7 @@ If the candidate asks to change their threshold: update Scout Config and re-eval
 
 ### Coaching State Integration
 
-Save to `coaching_state.md`:
+Save to `coaching_state/opportunities.md`:
 
 ```markdown
 ## Scout Config
@@ -203,7 +203,7 @@ Save to `coaching_state.md`:
 [rows — Status: New / Reviewed / Pursuing / Passed / Archived]
 ```
 
-Save to `opportunities_bad_fit.md`:
+Save to `coaching_state/opportunities_bad_fit.md`:
 
 ```markdown
 # Below-Threshold Opportunities
@@ -227,7 +227,7 @@ When other commands create Interview Loop entries for a company+role that exists
 
 ### Schema Migration
 
-When reading an existing `coaching_state.md` that doesn't have Scout Config or Scout Opportunities sections: these are created on first `scout` run via the URL Configuration Flow. No migration needed — absence is normal until scout is first used.
+When reading an existing `coaching_state/` directory that doesn't have Scout Config or Scout Opportunities sections in `coaching_state/opportunities.md`: these are created on first `scout` run via the URL Configuration Flow. No migration needed — absence is normal until scout is first used.
 
 ### Archival
 
@@ -235,4 +235,4 @@ When Scout Opportunities exceeds 50 rows:
 - Archive all "Passed" and "Archived" entries older than 30 days — move to a `### Historical Scout Summary` subsection preserving only: date range, count by score, count by status.
 - Keep all "New", "Reviewed", and "Pursuing" entries regardless of age.
 
-`opportunities_bad_fit.md` has no archival threshold — it grows unbounded. The file serves only as a dedup index (simple table, 5 short columns per row). Archiving old entries would cause the system to re-score previously seen listings, wasting tokens. Even at 1,000+ rows the file is small.
+`coaching_state/opportunities_bad_fit.md` has no archival threshold — it grows unbounded. The file serves only as a dedup index (simple table, 5 short columns per row). Archiving old entries would cause the system to re-score previously seen listings, wasting tokens. Even at 1,000+ rows the file is small.

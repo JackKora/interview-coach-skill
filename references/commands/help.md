@@ -4,7 +4,7 @@
 
 When the user types `help`, generate a context-aware command guide — not just a static list.
 
-1. **Read `coaching_state.md`** to understand where the candidate is in their coaching journey.
+1. **Read the relevant `coaching_state/` files** to understand where the candidate is in their coaching journey.
 2. **Show the full command guide** (see Output Schema below) with sub-commands and key features for each command.
 3. **Highlight the 2-3 most relevant commands right now** based on coaching state:
    - If no coaching state exists: highlight `kickoff`
@@ -150,7 +150,7 @@ When the user types `help`, generate a context-aware command guide — not just 
 - Presentation rounds are won in the preparation, not the delivery. Run `present` to structure your content, calibrate timing, and prepare for Q&A before you ever open PowerPoint.
 - The highest-leverage salary moment is the recruiter screen, not the offer negotiation. Run `salary` before that first call so you don't anchor yourself low.
 - Set up `scout` with your job search URLs and run it periodically to catch new listings without manually checking every site. It remembers what it's already seen.
-- Everything saves automatically to `coaching_state.md` — pick up where you left off, even weeks later
+- Everything saves automatically to the `coaching_state/` directory — pick up where you left off, even weeks later
 
 What would you like to work on?
 ```

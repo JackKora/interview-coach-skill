@@ -2,12 +2,12 @@
 
 ### Sequence
 
-1. **Check coaching state.** If `coaching_state.md` exists with an Interview Loops entry for this company, pull context: what round they're at, what concerns were flagged, what stories landed. This shapes the negotiation — "You advanced through 4 rounds, which means they're invested. That's leverage."
+1. **Check coaching state.** If `coaching_state/interviews.md` exists with an Interview Loops entry for this company, pull context: what round they're at, what concerns were flagged, what stories landed. This shapes the negotiation — "You advanced through 4 rounds, which means they're invested. That's leverage."
 2. Collect offer details: base, equity, bonus, title, level, location, other terms.
 3. Ask: "What's your ideal outcome? What's your walk-away point?"
 4. Ask: "Do you have competing offers or leverage? What's your BATNA?"
 5. Assess negotiation position and provide coaching.
-6. **Log the offer** to `coaching_state.md` Outcome Log (Result: offer) so `progress` and `reflect` can reference it.
+6. **Log the offer** to `coaching_state/interviews.md` Outcome Log (Result: offer) so `progress` and `reflect` can reference it.
 
 ### Competence Guardrails
 

@@ -49,7 +49,7 @@ Before running the full positioning exercise, check coaching state:
 
 ## Required Inputs
 
-- Target role context (from coaching_state.md Profile, or ask)
+- Target role context (from `coaching_state/profile.md` Profile, or ask)
 - Candidate background (from Resume Analysis + Storybank, or ask)
 
 ## Optional Inputs
@@ -74,13 +74,13 @@ Before running the full positioning exercise, check coaching state:
 
 ### Step 1: Context Assembly
 
-Pull from coaching_state.md:
-- Profile (target role, seniority band)
-- Resume Analysis (positioning strengths, career narrative gaps)
-- Storybank (earned secrets from stories rated 3+, narrative identity themes)
-- Active Coaching Strategy (if Differentiation is the gap, pitch addresses it directly)
-- LinkedIn Analysis (current headline/about — for consistency check)
-- Resume Optimization (current summary — for consistency check)
+Pull from the relevant `coaching_state/` files:
+- Profile from `coaching_state/profile.md` (target role, seniority band)
+- Resume Analysis from `coaching_state/profile.md` (positioning strengths, career narrative gaps)
+- Storybank from `coaching_state/storybank.md` (earned secrets from stories rated 3+, narrative identity themes)
+- Active Coaching Strategy from `coaching_state/profile.md` (if Differentiation is the gap, pitch addresses it directly)
+- LinkedIn Analysis from `coaching_state/assets.md` (current headline/about — for consistency check)
+- Resume Optimization from `coaching_state/assets.md` (current summary — for consistency check)
 - **Positioning performance data** (if `debrief` or `analyze` have notes on how the positioning landed in real interviews): Check Interview Intelligence → Effective/Ineffective Patterns for signals about how the candidate's self-introduction landed. If TMAY or positioning-related feedback exists (e.g., "interviewer seemed engaged during intro" or "recruiter said your pitch was too vague"), use it to refine the positioning. This creates a feedback loop: pitch → interview → debrief → pitch iteration.
 
 ### Step 2: Raw Material Extraction
@@ -291,7 +291,7 @@ Lenses 1, 2, 4, 5 (Pre-Mortem omitted — doesn't apply to a positioning artifac
 
 ## Coaching State Integration
 
-After running `pitch`, save to coaching_state.md:
+After running `pitch`, save to `coaching_state/assets.md`:
 
 ```markdown
 ## Positioning Statement

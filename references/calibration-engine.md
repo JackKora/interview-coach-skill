@@ -6,7 +6,7 @@ Centralizes calibration logic for scoring accuracy, root cause tracking, and lea
 
 ## Section 1: Calibration Metadata Schema
 
-The Calibration State section in `coaching_state.md` tracks:
+The Calibration State section in `coaching_state/profile.md` tracks:
 
 ```markdown
 ## Calibration State

@@ -37,7 +37,7 @@ Before running the full audit, check coaching state:
 ## Required Inputs
 
 - LinkedIn profile URL or full profile text (pasted sections)
-- Target role context (from coaching_state.md Profile, or ask)
+- Target role context (from `coaching_state/profile.md` Profile, or ask)
 
 ## Optional Inputs
 
@@ -64,12 +64,12 @@ Ask for LinkedIn profile URL or pasted text. If URL provided, ask candidate to p
 
 ### Step 2: Context Assembly
 
-Pull from coaching_state.md:
-- Target role(s) and seniority band
-- Resume Analysis (positioning strengths, concerns, story seeds)
-- Storybank (for earned secrets that should surface in About/Experience)
-- Active Coaching Strategy (bottleneck — if Differentiation is the gap, emphasize that in LinkedIn too)
-- Positioning Statement (if exists — use as consistency reference for headline and about rewrite)
+Pull from the relevant `coaching_state/` files:
+- Target role(s) and seniority band from `coaching_state/profile.md`
+- Resume Analysis from `coaching_state/profile.md` (positioning strengths, concerns, story seeds)
+- Storybank from `coaching_state/storybank.md` (for earned secrets that should surface in About/Experience)
+- Active Coaching Strategy from `coaching_state/profile.md` (bottleneck — if Differentiation is the gap, emphasize that in LinkedIn too)
+- Positioning Statement from `coaching_state/assets.md` (if exists — use as consistency reference for headline and about rewrite)
 
 ### Step 3: Section-by-Section Audit (9 sections)
 
@@ -270,7 +270,7 @@ Run Challenge Protocol lenses against the LinkedIn profile:
 
 ## Coaching State Integration
 
-After running `linkedin`, save to coaching_state.md:
+After running `linkedin`, save to `coaching_state/assets.md`:
 
 ```markdown
 ## LinkedIn Analysis

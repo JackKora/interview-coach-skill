@@ -43,7 +43,7 @@ Track drill weaknesses across sessions. If a candidate struggled with pushback h
 ### Question Tailoring
 
 Don't throw generic drill questions. Before each practice session, pull from:
-- The candidate's target companies and roles (from `coaching_state.md`)
+- The candidate's target companies and roles (from `coaching_state/profile.md`)
 - Known weak spots from previous analyses or practice rounds
 - Storybank gaps where no strong story exists — when a question hits a known gap (no story exists or story strength is low), coach the candidate using the appropriate gap response pattern from the Gap-Handling Module in `references/cross-cutting.md`. Map pattern selection to storybank scores: strength 2 → Adjacent Bridge, strength 1 → Reframe to Strength or Growth Narrative, no story → Hypothetical with Self-Awareness.
 - The specific competencies the candidate's target JDs emphasize
@@ -172,7 +172,7 @@ Retrieval is a standalone drill — not gated by the progression ladder — beca
 **Session setup:**
 
 1. **Gate check.** Requires 8+ indexed stories in the storybank. If fewer exist, redirect: "Retrieval practice works best with 8+ stories to draw from. You have [N]. Want to add a few with `stories add` first?"
-2. **Tailor questions to target roles.** Pull from `coaching_state.md` — use the candidate's target companies, JDs, predicted questions from `prep`, and known weak competencies. Don't use generic questions if role-specific data exists.
+2. **Tailor questions to target roles.** Pull from `coaching_state/profile.md` and `coaching_state/interviews.md` — use the candidate's target companies, JDs, predicted questions from `prep`, and known weak competencies. Don't use generic questions if role-specific data exists.
 3. **Run the drill** per the protocol in storybank-guide.md (10 rapid-fire questions, 10 seconds each, story ID + opening line).
 4. **Debrief** focuses on retrieval gaps (which competencies had no quick answer?), hesitation patterns (which question types cause delay?), and indexing issues (did they reach for the wrong story?).
 5. **Update coaching state**: Note retrieval patterns in the Session Log. If gaps are discovered, add them to the Revisit Queue and suggest `stories find gaps` or `stories add`.

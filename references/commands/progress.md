@@ -2,7 +2,7 @@
 
 ### Minimum Data Thresholds
 
-The value of `progress` scales with the data available. Before running the full protocol, assess what's in `coaching_state.md` and adapt:
+The value of `progress` scales with the data available. Before running the full protocol, assess what's in the `coaching_state/` files and adapt:
 
 | Data Available | What You Can Do | What You Can't Do |
 |---|---|---|
@@ -24,14 +24,14 @@ The value of `progress` scales with the data available. Before running the full 
 4. Narrate the trend trajectory (see Trend Narration below — don't just show numbers). Skip if < 3 sessions.
 4a. **Hard Truth (Level 5 only).** Based on all accumulated data (Score History trends, storybank gaps, avoidance patterns from Coaching Notes, self-assessment deltas, outcome patterns), identify the single most important uncomfortable truth. One paragraph. No softening. No "but here's the good news." Just the truth the candidate needs to hear. See `references/challenge-protocol.md` for the Hard Truth lens. At Levels 1-4: omit entirely.
 5. Check for outcome data and correlate with practice scores (see outcome tracking below). Skip if < 3 real interviews.
-5a. **Scoring Drift Detection** (requires 3+ outcomes). Run the Scoring Drift Detection Protocol from `references/calibration-engine.md`: build the outcome-score matrix, check for systematic drift per dimension, check for feedback contradictions, generate drift report, present adjustments to candidate. Update `coaching_state.md` → Calibration State. Skip if < 3 outcomes.
+5a. **Scoring Drift Detection** (requires 3+ outcomes). Run the Scoring Drift Detection Protocol from `references/calibration-engine.md`: build the outcome-score matrix, check for systematic drift per dimension, check for feedback contradictions, generate drift report, present adjustments to candidate. Update `coaching_state/profile.md` → Calibration State. Skip if < 3 outcomes.
 5b. **Cross-Dimension Root Cause Review**. Check Calibration State → Cross-Dimension Root Causes (active). For each active root cause: assess treatment effectiveness (are affected dimensions improving in tandem?), check if resolution criteria are met (1+ point improvement sustained over 3+ sessions), update status. If a root cause isn't responding to treatment, recommend a pivot: "We've been treating [root cause] with [treatment] for [N] sessions. Affected dimensions aren't improving together. Let's try a different approach."
 5c. **Success Pattern Analysis** (requires 1+ advancement or offer). Run the Learning from Successes protocol from `references/calibration-engine.md`: validate fit assessments, track positive dimension-outcome correlation, update storybank with success annotations, extract success patterns from 3+ successes. This ensures the system learns from what it got right, not just what it got wrong.
 5.5. **Outcome-Based Targeting Insights** — When 3+ real interview outcomes exist, analyze rejection patterns for targeting signals. See Step 5.5 below. Also validate fit assessment accuracy: if fit assessments were recorded, check whether they predicted outcomes — learn from correct verdicts as well as incorrect ones. Skip if < 3 outcomes.
 6. Check graduation criteria — are they interview-ready? (see Graduation Criteria below). Skip if < 3 sessions.
 7. Identify top priorities based on triage, not just lowest scores.
 8. Recommend drills and story updates.
-9. **Review and update Active Coaching Strategy.** Check whether the current approach is producing results. If scores are flat for 3+ sessions on the target dimension, recommend a pivot: "We've been focused on [X] for [N] sessions and it's not moving. That usually means we need a different approach." Update the strategy in `coaching_state.md` — record the old approach in Previous approaches with the reason it was abandoned, and write the new approach with rationale and pivot conditions.
+9. **Review and update Active Coaching Strategy.** Check whether the current approach is producing results. If scores are flat for 3+ sessions on the target dimension, recommend a pivot: "We've been focused on [X] for [N] sessions and it's not moving. That usually means we need a different approach." Update the strategy in `coaching_state/profile.md` — record the old approach in Previous approaches with the reason it was abandoned, and write the new approach with rationale and pivot conditions.
 10. Run coaching meta-check (every 3rd session or when triggered): "Is this feedback useful? Are we working on the right things? What's not clicking?" Record the response in the Meta-Check Log.
 
 ### Trend Narration
@@ -78,7 +78,7 @@ Over time, correlate practice scores with real outcomes:
 - If practice scores and outcomes align → the system is calibrated. Keep going.
 - If outcomes are good but practice scores are mediocre → the candidate may perform better under real pressure than in practice. Adjust drill intensity.
 
-Log outcomes in `coaching_state.md` (Score History and Outcome Log sections).
+Log outcomes in `coaching_state/scores.md` (Score History) and `coaching_state/interviews.md` (Outcome Log).
 
 ### Outcome-Score Correlation
 

@@ -69,7 +69,7 @@ No story should appear more than once in the final mapping unless no alternative
 - Suggest framing variation: "For Q3, lead with the decision-making angle. For Q4, lead with the stakeholder management angle."
 
 ### Step 5: Apply Freshness Constraint
-Check `coaching_state.md` → Interview Loops for stories used in prior rounds at this company.
+Check `coaching_state/interviews.md` → Interview Loops for stories used in prior rounds at this company.
 - Stories used in a previous round: downgrade by one fit level (Strong Fit → Workable) unless the candidate is asked to go deeper on the same topic.
 - Flag: "S003 was used in Round 1. Using it again in Round 2 signals limited range unless they specifically ask you to elaborate."
 
@@ -94,7 +94,7 @@ When company culture signals prize differentiation (e.g., companies known for "b
 Example: S005 (Workable, strong earned secret) competes with S008 (Workable, no earned secret). Under the conditional boost, S005 is treated as Strong Fit equivalent.
 
 ### When Calibration Confirms
-If `coaching_state.md` → Calibration State shows that Differentiation correlates with advancement for this candidate, upgrade this from conditional to default: always prefer stories with stronger earned secrets.
+If `coaching_state/profile.md` → Calibration State shows that Differentiation correlates with advancement for this candidate, upgrade this from conditional to default: always prefer stories with stronger earned secrets.
 
 ---
 

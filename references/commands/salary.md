@@ -107,7 +107,7 @@ Netflix: $343K | Google: $199K | Meta: $167K | Apple: $158K | Nvidia: $158K | Mi
 ### Required Inputs
 
 - Comp situation: What specifically is happening? (application form / recruiter screen / mid-process call / general strategy / "I don't know what to say about salary")
-- Target role context (from coaching_state.md Profile, or ask)
+- Target role context (from `coaching_state/profile.md` Profile, or ask)
 
 ### Optional Inputs
 
@@ -128,7 +128,7 @@ Netflix: $343K | Google: $199K | Meta: $167K | Apple: $158K | Nvidia: $158K | Mi
 ### Logic / Sequence (6 steps)
 
 **Step 1: Context Assembly**
-Pull from coaching_state.md: Profile (target role, seniority, location), Interview Loops (active companies, comp data for each if previously shared), Resume Analysis (current level, for comp calibration context), JD Analysis (comp data from JD if decode was run and range was included), Comp Strategy (if salary was run previously — build on it, don't restart).
+Pull from the relevant `coaching_state/` files: Profile from `coaching_state/profile.md` (target role, seniority, location), Interview Loops from `coaching_state/interviews.md` (active companies, comp data for each if previously shared), Resume Analysis from `coaching_state/profile.md` (current level, for comp calibration context), JD Analysis from `coaching_state/jd_analyses.md` (comp data from JD if decode was run and range was included), Comp Strategy from `coaching_state/assets.md` (if salary was run previously — build on it, don't restart).
 
 **Step 2: Situation Assessment**
 Assess one question at a time:
@@ -315,7 +315,7 @@ Lenses 1, 2, 4, 5 (Pre-Mortem omitted):
 
 ### Coaching State Integration
 
-Save to coaching_state.md:
+Save to `coaching_state/assets.md`:
 
 ```markdown
 ## Comp Strategy

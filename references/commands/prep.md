@@ -21,7 +21,7 @@
 5. Infer top evaluation criteria (adjusted for format + culture).
 6. Map candidate strengths and risks — incorporate interviewer-specific adjustments if intel available.
 6.5. **Role-Fit Assessment** — With the JD parsed and candidate profile available, run the full 5-dimension fit assessment from the Role-Fit Assessment Module (`references/cross-cutting.md`). See Step 6.5 below.
-7. **Check storybank status and health.** If the candidate hasn't built a storybank yet (no `coaching_state.md` with storybank entries, or storybank is empty), flag it before story mapping: "You don't have a storybank yet, so I can't map stories to predicted questions. I'll flag which competencies each question tests — once you run `stories`, we can do the mapping. Want to build your storybank now, or continue with the rest of the prep?" If a storybank exists, run an auto health check before mapping:
+7. **Check storybank status and health.** If the candidate hasn't built a storybank yet (no `coaching_state/storybank.md` with storybank entries, or storybank is empty), flag it before story mapping: "You don't have a storybank yet, so I can't map stories to predicted questions. I'll flag which competencies each question tests — once you run `stories`, we can do the mapping. Want to build your storybank now, or continue with the rest of the prep?" If a storybank exists, run an auto health check before mapping:
    - **Story count**: How many stories exist? Target: 8-12. Flag if < 6.
    - **Strength distribution**: How many at 4+? Target: at least 60%. Flag if majority are 3 or below.
    - **Earned secret coverage**: How many stories have real earned secrets vs. placeholders? Flag if < 50% have extracted earned secrets.
@@ -190,7 +190,7 @@ If they can't find out, default to a verbal walkthrough format (the most common 
 
 #### Saving Discovered Format
 
-After running Format Discovery, save the format details to `coaching_state.md` so subsequent commands don't re-ask:
+After running Format Discovery, save the format details to the relevant `coaching_state/` files so subsequent commands don't re-ask:
 
 - **In Profile** (general): Update the `Known interview formats` field with any new format types discovered.
 - **In Interview Loops** (company-specific): Under the relevant company entry, save structured format details per round:
@@ -297,7 +297,7 @@ If the candidate provides company culture context, integrate it into question pr
 
 ### Interview Loop Awareness
 
-If `coaching_state.md` shows previous rounds at the same company, this is a continuation prep, not a fresh start:
+If `coaching_state/interviews.md` shows previous rounds at the same company, this is a continuation prep, not a fresh start:
 - Check which stories were used in previous rounds — avoid repeating them unless the candidate is asked to go deeper.
 - Review what concerns likely surfaced from previous round analysis.
 - Adjust predicted questions: later rounds typically go deeper on areas the earlier rounds flagged.
