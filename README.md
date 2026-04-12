@@ -1,6 +1,6 @@
 # Interview Coach
 
-A Claude Code-based interview coach that covers the full job search lifecycle — from JD analysis and resume optimization through mock interviews to post-offer negotiation. 23 commands across application materials, interview prep, practice, analysis, and comp coaching. It scores your answers across five dimensions, diagnoses root causes behind weak spots, builds a storybank you can retrieve under pressure, and adapts its coaching to your specific patterns. Not a generic question bank. An adaptive system that gets sharper the more you use it.
+A Claude Code-based interview coach that covers the full job search lifecycle — from JD analysis and resume optimization through mock interviews to post-offer negotiation. 24 commands across application materials, interview prep, practice, analysis, and comp coaching. It scores your answers across five dimensions, diagnoses root causes behind weak spots, builds a storybank you can retrieve under pressure, and adapts its coaching to your specific patterns. Not a generic question bank. An adaptive system that gets sharper the more you use it.
 
 Say `kickoff`, share your resume, and you're being coached in under 2 minutes.
 
@@ -146,6 +146,14 @@ For both options, the coach will ask for your resume, target role, and timeline 
 | `practice` | Run drill rounds (with progression gating). At Level 5: challenge notes, expanded interviewer read, optional warmup skip | Round debrief + self-assessment delta + targeted adjustment |
 | `mock [format]` | Full simulated interview (4-6 Qs) — behavioral screen, deep behavioral, panel, bar raiser, system design/case study, technical+behavioral mix | Holistic arc feedback, signal-reading notes, energy trajectory |
 | `stories` | Build/manage storybank + rapid-retrieval drill. At Level 5: stories get red-teamed with 5 challenge lenses | Story table + earned secrets + gap analysis + retrieval drill |
+
+### Job Search Scouting
+
+| Command | Purpose | Typical Output |
+|---|---|---|
+| `scout` | Scan preconfigured job board URLs, score new listings against your profile, and track opportunities | Scan summary, above-threshold opportunities with fit scores and rationale, dedup against previously seen listings |
+
+Requires Chrome (Cowork with Claude Chrome Extension). Configure your search URLs on first run — supports LinkedIn, BuiltInChicago, Hiring.cafe, ExecThread, and any job board that renders listings as HTML. The system deduplicates across runs, scores fit using your profile + resume + storybank, and stores results in two tiers: above-threshold opportunities for review and below-threshold for dedup only. Token-efficient by design — uses text extraction over screenshots, early termination when no new listings are found, and batch assessment.
 
 ### Analysis, Tracking, and Post-Interview
 
@@ -333,7 +341,24 @@ Then specify message type (cold LinkedIn, warm intro, recruiter reply, etc.) and
 - Follow-up sequence with timing
 - Earned secret hooks pulled from your storybank
 
-### 11) Post-offer negotiation
+### 11) Scan for new opportunities
+
+```text
+scout
+```
+
+On first run, you'll configure your search URLs (LinkedIn, BuiltInChicago, Hiring.cafe, etc.). After that, each run scans all URLs, deduplicates against previously seen listings, and scores new ones against your profile.
+
+Expected output:
+
+- Scan summary (URLs scanned, listings read, new vs. already seen)
+- Above-threshold opportunities with fit score, rationale, and URL
+- Below-threshold listings stored silently for dedup
+- Recommended next steps for top-scoring opportunities
+
+Run weekly or whenever you want to check the market. The system remembers everything it's seen — no duplicate work across runs.
+
+### 12) Post-offer negotiation
 
 ```text
 negotiate
@@ -413,6 +438,7 @@ interview-coach-skill/
     │   ├── negotiate.md
     │   ├── feedback.md
     │   ├── reflect.md
+    │   ├── scout.md
     │   └── help.md
     ├── cross-cutting.md                # Shared modules: gap-handling, signal-reading, differentiation, cultural awareness, psychological readiness, cross-command dependencies
     ├── rubrics-detailed.md             # Scoring anchors, root causes, seniority calibration
@@ -443,6 +469,7 @@ interview-coach-skill/
 10. Run `decode` before applying — analyze the JD's language, assess your fit, and decide if the role is worth your time. Use batch triage to compare multiple JDs at once.
 11. Run `salary` before your first recruiter call — the recruiter screen is the highest-leverage comp moment, not the offer negotiation.
 12. Run `present` before a presentation round — structure your content and prepare for Q&A before you ever open PowerPoint.
+13. Run `scout` weekly to scan job boards automatically. It deduplicates across runs and scores new listings against your profile — no manual browsing required.
 
 ---
 
