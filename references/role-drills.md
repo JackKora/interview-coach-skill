@@ -321,7 +321,7 @@ See `references/commands/practice.md` for the `practice technical` menu entry an
 - "You've been asked to reduce page load time by 50%. Where do you start, and how do you decide what to prioritize?"
 - "Your team is debating whether to migrate to a new framework. Walk me through how you'd evaluate the decision."
 
-Adapt the scenario to the candidate's role and target company if available (from `coaching_state.md`).
+Adapt the scenario to the candidate's role and target company if available (from `coaching_state/profile.md`).
 
 **What to evaluate** (communication, not correctness):
 
@@ -452,7 +452,7 @@ The drills above are role-agnostic, but the scenarios should be adapted to each 
 - **Operations / Business Ops**: Use process design, tool selection, and systems improvement scenarios. Tradeoff Articulation → "build vs. buy" and "automate vs. manual" decisions.
 - **Marketing**: Use campaign strategy, channel allocation, and measurement scenarios. Tradeoff Articulation → "brand awareness vs. direct response" and "broad reach vs. targeted conversion."
 
-Pull from the candidate's target companies and roles (from `coaching_state.md`) to make scenarios specific. Generic scenarios build the skill; role-specific scenarios build confidence.
+Pull from the candidate's target companies and roles (from `coaching_state/profile.md`) to make scenarios specific. Generic scenarios build the skill; role-specific scenarios build confidence.
 
 ---
 
@@ -520,7 +520,7 @@ This drill simulates the worst-case version of an interview — multiple stresso
 
 ### Setup
 
-1. **Pull the candidate's weakest patterns** from `coaching_state.md` — Active Coaching Strategy, Score History, and Revisit Queue. The stress drill should target known vulnerabilities, not random pressure.
+1. **Pull the candidate's weakest patterns** from the relevant `coaching_state/` files — Active Coaching Strategy from `coaching_state/profile.md`, Score History from `coaching_state/scores.md`, and Revisit Queue. The stress drill should target known vulnerabilities, not random pressure.
 2. **Select the role-specific drill** that matches their target (PM Six-Lens, Engineer Technical Depth, etc.). The stress drill layers pressure *on top of* the role-specific content.
 3. **Set the frame**: "This is the hardest drill I'll throw at you. It's designed to break your composure so we can see what happens when things go sideways. Don't try to be perfect — try to recover."
 

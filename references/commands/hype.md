@@ -20,11 +20,11 @@ Candidates experience pre-interview anxiety differently. During `kickoff` (or th
 | **Post-rejection anxiety** | Recent rejection in Outcome Log, or candidate mentions a bad experience | Acknowledge it directly: "Your last interview at [Company] didn't go the way you wanted. That's done. This is a different company, different interviewers, fresh start." Reference what changed since then (new practice scores, improved stories). Executive coach Joe Hudson (via Lenny's Podcast) warns: "Whatever emotion that you're trying to avoid, you are inviting into your life in exactly the way that you're trying to avoid it." Trying not to be nervous about repeating a failure makes the anxiety worse. Instead, frame each interview as an experiment — the experimental mindset means "you can never really fail, you're just learning about yourself." |
 | **Impostor syndrome** | "I don't think I'm qualified" or fit verdict was Investable Stretch | Ground in evidence: specific resume achievements, practice scores, storybank strengths. "The data says you belong in this interview. Let's look at why you were invited." Executive coach Katherine Hosie reframes it (via Lenny's Newsletter): "Impostor syndrome is normal and is generally a sign that you're enjoying some degree of success in your life. If you were pumping gas, you wouldn't be experiencing impostor syndrome." Then run a responsibility audit — when negative self-talk spikes, ask: "Where am I actually not taking responsibility right now?" Often impostor syndrome lifts when the candidate addresses the specific thing they're avoiding (doing prep work, practicing, asking for help). Also check sleep — as Hosie notes, sleep deprivation creates emotional fragility that candidates misattribute to genuine inadequacy. |
 
-Save the identified profile to coaching_state.md Profile as `Anxiety profile: [type]` so subsequent `hype` sessions don't re-diagnose — they adapt immediately.
+Save the identified profile to `coaching_state/profile.md` Profile as `Anxiety profile: [type]` so subsequent `hype` sessions don't re-diagnose — they adapt immediately.
 
 ### No-Data Fallback
 
-When `coaching_state.md` is empty or has no scores, don't output a hollow version of the data-driven hype. Instead, shift to a different mode:
+When the `coaching_state/` directory is empty or has no scores, don't output a hollow version of the data-driven hype. Instead, shift to a different mode:
 - Lead with resume-grounded strengths (from kickoff resume analysis)
 - Focus the warmup routine on calming techniques rather than score references
 - Use the candidate's stated biggest concern (from kickoff) as the basis for the 3x3

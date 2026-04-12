@@ -76,14 +76,14 @@ Before running the outreach coaching, check coaching state:
 
 ### Step 1: Context Assembly
 
-Pull from coaching_state.md:
-- Positioning Statement (primary hook source)
-- Profile (target role, seniority band)
-- Resume Analysis (fallback positioning if no Positioning Statement)
-- Storybank (earned secrets for hooks)
-- Interview Loops (company context for targeted outreach)
-- LinkedIn Analysis (profile quality gate)
-- Differentiation data (from Active Coaching Strategy)
+Pull from the relevant `coaching_state/` files:
+- Positioning Statement from `coaching_state/assets.md` (primary hook source)
+- Profile from `coaching_state/profile.md` (target role, seniority band)
+- Resume Analysis from `coaching_state/profile.md` (fallback positioning if no Positioning Statement)
+- Storybank from `coaching_state/storybank.md` (earned secrets for hooks)
+- Interview Loops from `coaching_state/interviews.md` (company context for targeted outreach)
+- LinkedIn Analysis from `coaching_state/assets.md` (profile quality gate)
+- Differentiation data from `coaching_state/profile.md` (from Active Coaching Strategy)
 
 ### Step 2: Situation Assessment
 
@@ -431,7 +431,7 @@ Two parts — the message to your connector, and the forwardable blurb:
 
 ## Coaching State Integration
 
-After running `outreach`, save to coaching_state.md:
+After running `outreach`, save to `coaching_state/assets.md`:
 
 ```markdown
 ## Outreach Strategy

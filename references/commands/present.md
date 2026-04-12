@@ -99,7 +99,7 @@ State this boundary explicitly at the start: "I'll coach the structure, narrativ
 - Depth level: Quick Structure / Standard / Deep Prep (default: Standard)
 - Specific concerns (e.g., "I always run over time," "I don't know how to start," "I'm worried about Q&A")
 - Talk track text (for timing analysis and clarity review)
-- Company/role context (for audience calibration — or pulled from coaching_state.md)
+- Company/role context (for audience calibration — or pulled from `coaching_state/profile.md` and `coaching_state/interviews.md`)
 
 ### Depth Levels
 
@@ -112,7 +112,7 @@ State this boundary explicitly at the start: "I'll coach the structure, narrativ
 ### Logic / Sequence (7 steps)
 
 **Step 1: Context Assembly**
-Pull from coaching_state.md: Profile (target role, seniority), Interview Loops (company/role/format details), Prep Brief (if prep was run — evaluation criteria, culture, interviewer intel), Storybank (supporting stories to incorporate).
+Pull from the relevant `coaching_state/` files: Profile from `coaching_state/profile.md` (target role, seniority), Interview Loops from `coaching_state/interviews.md` (company/role/format details), Prep Brief (if prep was run — evaluation criteria, culture, interviewer intel), Storybank from `coaching_state/storybank.md` (supporting stories to incorporate).
 
 Gather from candidate (one question at a time):
 1. What's the presentation topic/prompt? (exact wording if they have it)
@@ -343,7 +343,7 @@ Lenses 1, 2, 4, 5 (Pre-Mortem omitted — replaced with devil's advocate Q&A whi
 
 ### Coaching State Integration
 
-Save to coaching_state.md as a top-level section (matching the schema in SKILL.md). Include the company name in the section header when company-specific:
+Save to `coaching_state/assets.md` as a section (matching the schema in SKILL.md). Include the company name in the section header when company-specific:
 
 ```markdown
 ## Presentation Prep: [Topic / Company]

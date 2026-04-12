@@ -36,7 +36,7 @@ Before running the full audit, check coaching state:
 ## Required Inputs
 
 - Resume text (pasted, from file, or already captured during kickoff)
-- Target role context (from coaching_state.md Profile, or ask)
+- Target role context (from `coaching_state/profile.md` Profile, or ask)
 
 ## Optional Inputs
 
@@ -65,14 +65,14 @@ Use resume from coaching state if available (kickoff captures resume text), othe
 
 ### Step 2: Context Assembly
 
-Pull from coaching_state.md:
-- Target role(s) and seniority band
-- Resume Analysis (build on kickoff's work — don't re-derive what's already been assessed. Focus on optimization, not re-diagnosis.)
-- Storybank (for earned secrets and quantified outcomes to feed into bullet rewrites)
-- Active Coaching Strategy (bottleneck — if Differentiation is the gap, emphasize that in resume too)
-- LinkedIn Analysis (if exists — for cross-surface consistency at Deep level)
-- Interview Loops (for JDs — enables targeted optimization)
-- Positioning Statement (if exists — use as consistency reference for summary rewrite)
+Pull from the relevant `coaching_state/` files:
+- Target role(s) and seniority band from `coaching_state/profile.md`
+- Resume Analysis from `coaching_state/profile.md` (build on kickoff's work — don't re-derive what's already been assessed. Focus on optimization, not re-diagnosis.)
+- Storybank from `coaching_state/storybank.md` (for earned secrets and quantified outcomes to feed into bullet rewrites)
+- Active Coaching Strategy from `coaching_state/profile.md` (bottleneck — if Differentiation is the gap, emphasize that in resume too)
+- LinkedIn Analysis from `coaching_state/assets.md` (if exists — for cross-surface consistency at Deep level)
+- Interview Loops from `coaching_state/interviews.md` (for JDs — enables targeted optimization)
+- Positioning Statement from `coaching_state/assets.md` (if exists — use as consistency reference for summary rewrite)
 
 ### Step 3: ATS Compatibility Scan
 
@@ -377,7 +377,7 @@ Run Challenge Protocol lenses against the resume:
 
 ## Coaching State Integration
 
-After running `resume`, save to coaching_state.md:
+After running `resume`, save to `coaching_state/assets.md`:
 
 ```markdown
 ## Resume Optimization

@@ -28,7 +28,7 @@ Say `kickoff`, share your resume, and you're being coached in under 2 minutes.
 
 **Interview intelligence** — The system learns from your real interview experiences. Every transcript, debrief, and recruiter feedback adds to a personalized knowledge base: question patterns across companies, what works and what doesn't for you specifically, and feedback-outcome correlations. Intelligence data has temporal decay — stale data is flagged, not silently relied on.
 
-**Session continuity** — A persistent `coaching_state.md` file tracks your storybank, scores, patterns, drill progression, interview loops, interview intelligence, and calibration state across sessions. Pick up where you left off, weeks later. Saves are automatic.
+**Session continuity** — A persistent `coaching_state/` file tracks your storybank, scores, patterns, drill progression, interview loops, interview intelligence, and calibration state across sessions. Pick up where you left off, weeks later. Saves are automatic.
 
 **Challenge protocol (Directness Level 5)** — At the highest directness setting, the coach actively challenges you through five lenses: Assumption Audit, Blind Spot Scan, Pre-Mortem, Devil's Advocate, and Strengthening Path. Stories get red-teamed after you add or improve them. Transcripts get challenged. Practice rounds 3+ include a rotating challenge note. Progress reports include a Hard Truth section. Hype includes a pre-mortem before interviews. Rejections get mined for leverage. The system also detects avoidance patterns — if you keep steering away from a weakness, it names it directly. Every challenge ends with a concrete fix. Levels 1-4 are completely unaffected.
 
@@ -100,7 +100,7 @@ Requires any paid ChatGPT plan.
 
 ---
 
-For both options, the coach will ask for your resume, target role, and timeline — then build your profile, assess your starting point, and give you a prioritized action plan. Everything saves automatically to `coaching_state.md` so you pick up where you left off next session.
+For both options, the coach will ask for your resume, target role, and timeline — then build your profile, assess your starting point, and give you a prioritized action plan. Everything saves automatically to `coaching_state/` so you pick up where you left off next session.
 
 ---
 
@@ -387,7 +387,7 @@ interview-coach-skill/
 ├── SKILL.md                            # Core skill — rename to CLAUDE.md to activate
 ├── README.md                           # This file
 ├── LICENSE                             # MIT License
-├── coaching_state.md                   # Created on first kickoff (persistent memory, auto-saved)
+├── coaching_state/                   # Created on first kickoff (persistent memory, auto-saved)
 └── references/
     ├── commands/                       # Per-command workflows (loaded on demand)
     │   ├── kickoff.md
@@ -458,7 +458,7 @@ No. Core workflows are role-agnostic; role drills include PM, Engineering, Desig
 The skill is intentionally high-candor and evidence-based. It uses strengths-first delivery and self-reflection before critique. It also periodically checks whether the coaching is landing and adapts if not. You can set your feedback directness level (1-5) during kickoff. At Level 5, the Challenge Protocol activates: stories get red-teamed, progress includes a Hard Truth, rejections get mined for leverage, and avoidance patterns are named directly. Levels 1-4 are gentler — same rigor, softer delivery.
 
 **How does it work across multiple sessions?**
-The skill writes a `coaching_state.md` file that tracks your storybank, scores, patterns, drill progression, interview outcomes, interview loops, and more. At the start of each session, it reads this file and picks up where you left off. Saves happen automatically after every major workflow — not just at session end.
+The skill writes a `coaching_state/` file that tracks your storybank, scores, patterns, drill progression, interview outcomes, interview loops, and more. At the start of each session, it reads this file and picks up where you left off. Saves happen automatically after every major workflow — not just at session end.
 
 ---
 

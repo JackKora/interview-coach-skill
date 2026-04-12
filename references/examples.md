@@ -129,7 +129,7 @@ These examples show what good skill output looks like. Use them as calibration a
 ### Self-Assessment Delta
 - Candidate rated themselves: ~3 on Credibility
 - Coach scored: 3 on Credibility
-- Calibration gap: Accurate on this one. Good self-awareness. (Note: across 4 prior rounds, candidate has consistently rated Structure 1 point higher than coach scores — this pattern hasn't surfaced here but is tracked in `coaching_state.md`.)
+- Calibration gap: Accurate on this one. Good self-awareness. (Note: across 4 prior rounds, candidate has consistently rated Structure 1 point higher than coach scores — this pattern hasn't surfaced here but is tracked in `coaching_state/profile.md`.)
 
 ### Next Round Adjustment
 - Try this single change: When interrupted with pushback, respond in ONE sentence that acknowledges and redirects, then continue your story. Practice: "Fair point — here's what makes this different: [one sentence]. So what I did was..." No more than 15 seconds on the pushback response.

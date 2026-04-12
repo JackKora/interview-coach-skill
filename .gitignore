@@ -1,9 +1,15 @@
 # OS
 .DS_Store
 
-# Personal coaching data — contains stories, scores, interview targets, and concerns
+.claude
+
+# Personal coaching data — split across coaching_state/ directory
+coaching_state/
+# Legacy single-file state (pre-split backup)
 coaching_state.md
-# Bad fit opportunities - may get large for active searches, hence it is a separate file
+coaching_state.md.pre-split-backup
+coaching_state.md.backup
+# Legacy bad fit file location (now lives in coaching_state/)
 opportunities_bad_fit.md
 
 # Active skill file (created by copying SKILL.md during setup)
