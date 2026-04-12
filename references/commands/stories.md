@@ -36,7 +36,7 @@ Story coach Matthew Dicks (author of *Storyworthy*, via Lenny's Podcast) identif
 - **Start as close to the end as possible**: The #1 revision Dicks gives is "you've started your story in the wrong place." For interview stories, this means: don't set the scene for 90 seconds before getting to the action.
 - **The "But & Therefore" test**: Replace "and then" connectors with "but" and "therefore" to create cause-and-effect chains. If you can't, the story lacks narrative tension.
 
-**Important**: When adding a story, write the full STAR text to the Story Details section in `coaching_state.md` — not just the index row in the Storybank table. The table is a quick-reference index. The Story Details section is where the actual story lives, including Situation, Task, Action, Result, Earned Secret, deploy use-case, and version history. Without the full text, the coach can't help improve the story in a future session without asking the candidate to retell it from scratch.
+**Important**: When adding a story, write the full STAR text to the Story Details section in `coaching_state/storybank.md` — not just the index row in the Storybank table. The table is a quick-reference index. The Story Details section is where the actual story lives, including Situation, Task, Action, Result, Earned Secret, deploy use-case, and version history. Without the full text, the coach can't help improve the story in a future session without asking the candidate to retell it from scratch.
 
 ### Improving Stories — Structured Upgrade Protocol
 
@@ -88,7 +88,7 @@ See `references/storybank-guide.md` for the full storybank format, column defini
 
 When the candidate selects "Find gaps," don't just list missing competencies — rank them by how much they matter for this candidate's target roles:
 
-1. Cross-reference the candidate's target roles/companies (from `coaching_state.md`) with the storybank's skill coverage. **Check both Primary and Secondary Skills** — a competency may be covered as a secondary skill in an existing story, which changes the gap from "no story" to "Workable coverage" (see `references/story-mapping-engine.md` for fit scoring).
+1. Cross-reference the candidate's target roles/companies (from `coaching_state/profile.md`) with the storybank's skill coverage. **Check both Primary and Secondary Skills** — a competency may be covered as a secondary skill in an existing story, which changes the gap from "no story" to "Workable coverage" (see `references/story-mapping-engine.md` for fit scoring).
 2. For each gap, assess: **Critical** (this competency will definitely be tested and no story exists, even as a secondary skill), **Important** (likely to come up, only weak stories or secondary-skill-only coverage available), **Nice-to-have** (might come up, but won't make or break the interview).
 3. For critical gaps, check: can an existing story be reframed to cover this competency (using its secondary skill or an adjacent experience), or does the candidate need to surface a new experience entirely?
 4. Prescribe gap-handling patterns from the Gap-Handling Module in `references/cross-cutting.md` for any competencies where no real story exists. Use the Pattern Selection by Storybank Score table: strength 2 → Adjacent Bridge, strength 1 → Reframe to Strength or Growth Narrative, no story → Hypothetical with Self-Awareness.
@@ -125,8 +125,13 @@ Requires 5+ stories in the storybank. If fewer exist, redirect: "Narrative ident
 
 #### Analysis Protocol
 
+<<<<<<< HEAD
 1. Read every story's full STAR text, earned secret, and deploy use-case from `coaching_state.md`.
 2. Cluster stories by **underlying theme** — not surface skill. Surface skills are things like "leadership" or "communication." Themes are specific patterns like "building systems where none existed," "translating between worlds that don't naturally talk to each other," or "making unpopular bets that paid off." If the theme could describe a generic candidate, go deeper. Matthew Dicks' principle applies at the portfolio level (via Lenny's Podcast): the best interview narratives have an overall arc of transformation, not just individual stories. When extracting themes, look for the meta-narrative — how has this candidate's understanding of their craft evolved? That evolution IS the narrative identity.
+=======
+1. Read every story's full STAR text, earned secret, and deploy use-case from `coaching_state/storybank.md`.
+2. Cluster stories by **underlying theme** — not surface skill. Surface skills are things like "leadership" or "communication." Themes are specific patterns like "building systems where none existed," "translating between worlds that don't naturally talk to each other," or "making unpopular bets that paid off." If the theme could describe a generic candidate, go deeper.
+>>>>>>> 50980ee (split storage)
 3. Identify 2-3 dominant themes. Most candidates have 2. Three is rare and usually means one is weak.
 4. Name the **sharpest edge** — the theme that is most distinctive to this candidate, hardest to replicate, and most likely to make an interviewer remember them.
 5. Flag **orphan stories** — stories that don't connect to any theme. These dilute the narrative and may be retirement candidates.
