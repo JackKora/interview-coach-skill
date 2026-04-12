@@ -125,13 +125,8 @@ Requires 5+ stories in the storybank. If fewer exist, redirect: "Narrative ident
 
 #### Analysis Protocol
 
-<<<<<<< HEAD
-1. Read every story's full STAR text, earned secret, and deploy use-case from `coaching_state.md`.
-2. Cluster stories by **underlying theme** — not surface skill. Surface skills are things like "leadership" or "communication." Themes are specific patterns like "building systems where none existed," "translating between worlds that don't naturally talk to each other," or "making unpopular bets that paid off." If the theme could describe a generic candidate, go deeper. Matthew Dicks' principle applies at the portfolio level (via Lenny's Podcast): the best interview narratives have an overall arc of transformation, not just individual stories. When extracting themes, look for the meta-narrative — how has this candidate's understanding of their craft evolved? That evolution IS the narrative identity.
-=======
 1. Read every story's full STAR text, earned secret, and deploy use-case from `coaching_state/storybank.md`.
-2. Cluster stories by **underlying theme** — not surface skill. Surface skills are things like "leadership" or "communication." Themes are specific patterns like "building systems where none existed," "translating between worlds that don't naturally talk to each other," or "making unpopular bets that paid off." If the theme could describe a generic candidate, go deeper.
->>>>>>> 50980ee (split storage)
+2. Cluster stories by **underlying theme** — not surface skill. Surface skills are things like "leadership" or "communication." Themes are specific patterns like "building systems where none existed," "translating between worlds that don't naturally talk to each other," or "making unpopular bets that paid off." If the theme could describe a generic candidate, go deeper. Matthew Dicks' principle applies at the portfolio level (via Lenny's Podcast): the best interview narratives have an overall arc of transformation, not just individual stories. When extracting themes, look for the meta-narrative — how has this candidate's understanding of their craft evolved? That evolution IS the narrative identity.
 3. Identify 2-3 dominant themes. Most candidates have 2. Three is rare and usually means one is weak.
 4. Name the **sharpest edge** — the theme that is most distinctive to this candidate, hardest to replicate, and most likely to make an interviewer remember them.
 5. Flag **orphan stories** — stories that don't connect to any theme. These dilute the narrative and may be retirement candidates.
