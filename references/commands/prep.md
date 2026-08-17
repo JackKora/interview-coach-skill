@@ -27,7 +27,7 @@
    - **Earned secret coverage**: How many stories have real earned secrets vs. placeholders? Flag if < 50% have extracted earned secrets.
    - **Competency gaps for this role**: Cross-reference the JD-derived competencies (from Step 3) against the storybank's primary and secondary skills. Flag any critical competency with no story or only weak stories.
    - **Overuse risk**: Flag stories with Use Count 3+ in the current job search.
-   - **Freshness risk**: Flag stories used in prior rounds at this company (from Interview Loops).
+   - **Freshness risk**: Flag stories used in prior rounds of this exact Loop ID or company + role (from Interview Loops).
    Report the health check as a `Storybank Health` section in the output (see output schema below). If critical issues exist, suggest `stories` before continuing — but don't block the prep.
 8. **Generate likely questions and story mapping.** Use `references/story-mapping-engine.md` for the full portfolio optimization protocol. This replaces simple Q→S### mapping with fit-scored, conflict-resolved, freshness-checked portfolio mapping. If no storybank exists, output competency mapping only (flag which competencies each question tests and which gap-handling patterns to prepare). When generating predicted questions for PM roles, draw from the High-Signal Question Patterns and Lenny's PM Interview Questions below in addition to JD-derived competencies.
 9. Generate non-generic interviewer questions.
@@ -193,7 +193,7 @@ If they can't find out, default to a verbal walkthrough format (the most common 
 After running Format Discovery, save the format details to the relevant `coaching_state/` files so subsequent commands don't re-ask:
 
 - **In Profile** (general): Update the `Known interview formats` field with any new format types discovered.
-- **In Interview Loops** (company-specific): Under the relevant company entry, save structured format details per round:
+- **In Interview Loops** (company-specific): Under the exact Loop ID or company + role entry, save structured format details per round. If multiple loops match, disambiguate before writing:
   ```
   - Round formats:
     - Round 1: Behavioral screen, 45min, recruiter
@@ -202,7 +202,7 @@ After running Format Discovery, save the format details to the relevant `coachin
   ```
   Include format type, duration, format variant (if applicable), and interviewer type for each round. This level of detail allows `mock`, `practice technical`, and `hype` to tailor their output without re-running discovery.
 
-This prevents re-running discovery when the candidate later runs `mock`, `practice technical`, or `hype` for the same company.
+This prevents re-running discovery when the candidate later runs `mock`, `practice technical`, or `hype` for the same loop and round.
 
 #### Format Variability Acknowledgment
 
@@ -297,11 +297,11 @@ If the candidate provides company culture context, integrate it into question pr
 
 ### Interview Loop Awareness
 
-If `coaching_state/interviews.md` shows previous rounds at the same company, this is a continuation prep, not a fresh start:
+If the exact Loop ID or company + role in `coaching_state/interviews.md` shows previous rounds, this is continuation prep, not a fresh start. If multiple loops match, disambiguate before reading:
 - Check which stories were used in previous rounds — avoid repeating them unless the candidate is asked to go deeper.
 - Review what concerns likely surfaced from previous round analysis.
 - Adjust predicted questions: later rounds typically go deeper on areas the earlier rounds flagged.
-- **Diff against debrief data**: If `debrief` was run after a previous round at this company, explicitly compare: what signals did the interviewer show (from debrief's Signal Reading section)? What concerns likely surfaced based on those signals? Use debrief data to sharpen predictions — "Your Round 1 debrief noted the interviewer pushed back on your team size claim. Expect Round 2 to probe Credibility harder on scope and impact."
+- **Diff against debrief data**: If `debrief` was run after a previous round in this exact loop, explicitly compare: what signals did the interviewer show (from debrief's Signal Reading section)? What concerns likely surfaced based on those signals? Use debrief data to sharpen predictions — "Your Round 1 debrief noted the interviewer pushed back on your team size claim. Expect Round 2 to probe Credibility harder on scope and impact."
 - Note: "You used S003 and S007 in Round 1. For Round 2, prioritize S### and S### to show range. Based on your Round 1 analysis, they'll likely probe deeper on [area]."
 - **Interview Intelligence cross-referencing** (light-touch rule: only surface when it changes the prep brief):
   - Check Interview Intelligence → Company Patterns for this company: real questions from past rounds, what worked/didn't, stories that landed
@@ -349,7 +349,7 @@ With the JD parsed and candidate profile available, run the full 5-dimension fit
 
 **Output the verdict** (Strong Fit / Investable Stretch / Long-Shot Stretch / Weak Fit) with evidence.
 
-If a `research` fit assessment already exists for this company, compare: "Research flagged this as an Investable Stretch based on limited data. Now that I have the JD, I'm upgrading to Strong Fit because [reason]" or "The JD confirms the domain gap I flagged earlier — this is still a stretch, and here's our plan for it."
+If a `research` fit assessment already exists for this exact Loop ID or company + role, compare: "Research flagged this as an Investable Stretch based on limited data. Now that I have the JD, I'm upgrading to Strong Fit because [reason]" or "The JD confirms the domain gap I flagged earlier — this is still a stretch, and here's our plan for it." Never reuse another role's fit assessment; disambiguate multiple matches.
 
 For Stretch or Weak verdicts, adjust the rest of the prep brief accordingly — Likely Concerns should prioritize the structural gaps, and story mapping should deliberately address frameable gaps.
 
@@ -428,7 +428,7 @@ When generating Likely Concerns, pull from the Role-Fit Assessment's gap classif
 - Earned secret coverage: __ of __ stories have extracted earned secrets
 - Competency coverage for this role: [critical gaps flagged]
 - Overuse warnings: [stories with Use Count 3+]
-- Freshness warnings: [stories used in prior rounds at this company]
+- Freshness warnings: [stories used in prior rounds of this exact loop]
 - Assessment: [Healthy / Needs work / Critical gaps — with specific recommendations]
 
 ## Predicted Questions (7-10)

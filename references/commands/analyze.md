@@ -13,10 +13,10 @@ If a candidate drops a transcript without having run `kickoff` first, don't refu
 
 ### Step Sequence
 
-1. **Check for existing debrief data.** If `coaching_state/interviews.md` has a `debrief` entry for this interview (same company/round), pull it in as context — the candidate's emotional read, interviewer signals they noticed, stories they used, and their same-day self-assessment. This is valuable because debrief captures impressions while fresh, before memory reconstruction smooths things over. Note any discrepancies between debrief impressions and what the transcript actually shows — these deltas are coaching gold.
+1. **Check for existing debrief data.** Match the exact Loop ID or company + role + round in `coaching_state/interviews.md`; if more than one loop or round matches, disambiguate before reading. Pull that debrief in as context — the candidate's emotional read, interviewer signals they noticed, stories they used, and their same-day self-assessment. This is valuable because debrief captures impressions while fresh, before memory reconstruction smooths things over. Note any discrepancies between debrief impressions and what the transcript actually shows — these deltas are coaching gold.
 2. Ask self-assessment questions first: "Before I dig in — which answer do you feel best about, and which one do you think was weakest? And overall, how do you think it went?" (Wait for response before proceeding.) If a debrief already captured this, reference it: "You told me right after the interview that Q3 felt rough. Let's see what the transcript shows."
 3. **Set the self-assessment aside.** Do NOT let the candidate's answer influence your scoring. Analyze the transcript independently — score first, form your own conclusions, then compare to what they said.
-3.5. **Format detection and normalization.** Before cleaning, run the format detection protocol from `references/transcript-formats.md`. Identify the transcript source tool (Otter, Grain, Zoom VTT, etc.) and normalize to the standard internal representation. If Interview Loops has round format info for this company, use it to confirm or override the transcript format detection.
+3.5. **Format detection and normalization.** Before cleaning, run the format detection protocol from `references/transcript-formats.md`. Identify the transcript source tool (Otter, Grain, Zoom VTT, etc.) and normalize to the standard internal representation. If the exact Loop ID or company + role + round has saved format information, use it to confirm or override transcript format detection; never select format data by company alone.
 4. Clean the normalized transcript (content-level cleaning — timestamps should already be stripped by normalization).
 5. **Transcript quality gate**: After cleaning, assess how much is usable. Incorporate format-derived quality signals (speaker label coverage, normalization confidence, multi-speaker detection). If significant gaps exist (garbled sections, missing speaker labels, <60% recoverable), say so upfront: "This transcript has significant quality issues. I can score what's here, but my confidence is reduced. Here's what I can and can't assess: [specifics]." Be transparent throughout the analysis about where you're working from solid data vs. filling in gaps.
 6. **Format-aware parsing.** Dispatch to the appropriate parsing path from `references/transcript-processing.md` Step 2 based on the detected interview format: Path A (Behavioral — default), Path B (Panel), Path C (System Design/Case Study), Path D (Technical+Behavioral Mix), or Path E (Case Study, candidate-driven).
@@ -108,7 +108,7 @@ When rewriting:
 - Format source: [coaching state / candidate / transcript inference / default]
 - Scoring weight adjustments: [which dimensions are weighted highest for this format]
 - Format-specific dimensions scored: [list any additional dimensions, or "N/A — standard behavioral"]
-- Coaching scope: [for non-behavioral formats, note coaching boundaries per SKILL.md Rule 11]
+- Coaching scope: [for non-behavioral formats, note the Technical Format Coaching Boundaries in `references/commands/prep.md`, as required by the root instructions]
 
 ## Scorecard
 - Substance:

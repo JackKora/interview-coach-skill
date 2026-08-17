@@ -3,7 +3,7 @@
 ### Coaching State Integration
 
 Before drafting, check the relevant `coaching_state/` files for data that strengthens the thank-you:
-- **Interview Loops**: Pull interviewer names, round context, stories used, and signals observed from the most recent `debrief` entry.
+- **Interview Loops**: Pull interviewer names, round context, stories used, and signals observed from the exact Loop ID or company + role + round. Use the most recent `debrief` only when that identity is unambiguous; otherwise ask which interview.
 - **Interviewer Intelligence**: If interviewer profiles were researched during `prep`, reference shared interests or background to personalize the note.
 - **Storybank**: If `debrief` logged which stories were used and how they landed, use positive-signal stories as callback material ("I especially enjoyed discussing [topic from the story that landed well]").
 

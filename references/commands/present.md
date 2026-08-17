@@ -87,7 +87,7 @@ State this boundary explicitly at the start: "I'll coach the structure, narrativ
 - If no `kickoff`: Soft gate — "I can help structure your presentation, but without your target role context I can't calibrate for your audience. Run `kickoff` first, or tell me about the audience and I'll work with what we have."
 - If interview within 48 hours AND this is the presentation round: This IS the priority. Proceed immediately.
 - If interview within 48 hours but the presentation round is NOT next: "You have a [format] round in [X] hours. Want to focus on `hype`/`prep` for that first and come back to presentation prep?"
-- If Prep Brief exists for this company: Use it (evaluation criteria, culture, interviewer intel feed into audience calibration and Q&A prediction).
+- If a Prep Brief exists for the exact Loop ID or company + role: Use it (evaluation criteria, culture, interviewer intel feed into audience calibration and Q&A prediction). If multiple briefs match the company, disambiguate before reading.
 
 ### Required Inputs
 
@@ -343,10 +343,13 @@ Lenses 1, 2, 4, 5 (Pre-Mortem omitted — replaced with devil's advocate Q&A whi
 
 ### Coaching State Integration
 
-Save to `coaching_state/assets.md` as a section (matching the schema in SKILL.md). Include the company name in the section header when company-specific:
+Save to `coaching_state/assets.md` as a section (matching `references/state-schemas.md`). For company-specific prep, match the exact Loop ID or company + role + round and include that identity; disambiguate before writing:
 
 ```markdown
-## Presentation Prep: [Topic / Company]
+## Presentation Prep: [Topic / Company — Role — Round]
+- Loop ID: [stable loop ID, or "none" for a general presentation]
+- Role: [role title, or "none"]
+- Round ID/type: [round identity, or "none"]
 - Date: [date]
 - Depth: [Quick Structure / Standard / Deep Prep]
 - Framework: [selected narrative arc]

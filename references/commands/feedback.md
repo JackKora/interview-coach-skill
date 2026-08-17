@@ -48,7 +48,7 @@ Classify the candidate's input into one of five types. If ambiguous, ask: "Is th
 
 **State updates**:
 - Update Outcome Log (Date, Company, Role, Round, Result, Notes)
-- Update Interview Loops → relevant company entry (Status, Rounds completed)
+- Update Interview Loops → exact Loop ID or company + role entry (Status, Rounds completed); if multiple loops match, disambiguate before writing
 - Update Interview Intelligence → Question Bank Outcome column for all questions from this company/round
 - If advanced with next-round details, update Interview Loops → Next round
 

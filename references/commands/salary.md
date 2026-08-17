@@ -128,7 +128,7 @@ Netflix: $343K | Google: $199K | Meta: $167K | Apple: $158K | Nvidia: $158K | Mi
 ### Logic / Sequence (6 steps)
 
 **Step 1: Context Assembly**
-Pull from the relevant `coaching_state/` files: Profile from `coaching_state/profile.md` (target role, seniority, location), Interview Loops from `coaching_state/interviews.md` (active companies, comp data for each if previously shared), Resume Analysis from `coaching_state/profile.md` (current level, for comp calibration context), JD Analysis from `coaching_state/jd_analyses.md` (comp data from JD if decode was run and range was included), Comp Strategy from `coaching_state/assets.md` (if salary was run previously — build on it, don't restart).
+Pull from the relevant `coaching_state/` files: Profile from `coaching_state/profile.md` (target role, seniority, location), Interview Loops from `coaching_state/interviews.md` (match each exact Loop ID or company + role before using previously shared comp), Resume Analysis from `coaching_state/profile.md` (current level, for comp calibration context), JD Analysis from `coaching_state/jd_analyses.md` (comp data from the matching company + role JD if decode was run and range was included), Comp Strategy from `coaching_state/assets.md` (if salary was run previously — build on it, don't restart). Disambiguate multiple same-company roles.
 
 **Step 2: Situation Assessment**
 Assess one question at a time:

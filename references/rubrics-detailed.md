@@ -1,6 +1,6 @@
 # Detailed Scoring Rubrics
 
-Use these expanded rubrics when doing deep analysis. The compact version in SKILL.md is for quick scoring.
+Use these expanded rubrics when doing deep analysis. The compact version in the root instructions is for quick scoring.
 
 ## Substance (Evidence Quality)
 

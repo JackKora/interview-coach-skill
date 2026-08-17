@@ -79,7 +79,7 @@ Score each round and add to Score History in `coaching_state/scores.md` (Type: p
 
 ### Concern Tracking
 
-After generating, save the ranked concerns to the relevant `coaching_state/` file (in the Interview Loops section of `coaching_state/interviews.md` under the relevant company's Concerns surfaced field, or in Active Coaching Strategy in `coaching_state/profile.md` if general). This allows:
+After generating, save the ranked concerns to the relevant `coaching_state/` file (in `coaching_state/interviews.md` under the exact Loop ID or company + role's Concerns surfaced field, or in Active Coaching Strategy in `coaching_state/profile.md` if general). If multiple loops match, disambiguate before writing. This allows:
 - `prep` to pull from previously generated concerns instead of re-deriving them
 - `hype` to reference the top concern + counter in the 3x3
 - `progress` to track whether concerns are being addressed over time

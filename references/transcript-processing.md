@@ -330,7 +330,7 @@ In addition to the behavioral anti-patterns above, scan for these format-specifi
 
 ## Step 3: Multi-Lens Scoring
 
-Run the parsed transcript through evaluative lenses. **Important**: Which lenses you run depends on the Post-Scoring Decision Tree in `references/commands/analyze.md`. If a primary bottleneck is identified after initial scoring, scope the analysis accordingly rather than running all four lenses mechanically. Always follow the evidence sourcing standard from SKILL.md. **For Quick Prep track**: Run only Lens 1 and skip to delta sheet.
+Run the parsed transcript through evaluative lenses. **Important**: Which lenses you run depends on the Post-Scoring Decision Tree in `references/commands/analyze.md`. If a primary bottleneck is identified after initial scoring, scope the analysis accordingly rather than running all four lenses mechanically. Always follow the evidence sourcing standard from the root instructions. **For Quick Prep track**: Run only Lens 1 and skip to delta sheet.
 
 ### Scoring Weight Adjustments by Format
 
@@ -608,7 +608,7 @@ MODE ANALYSIS:
 
 ## Step 5: Update Coaching State
 
-After analysis, update the relevant `coaching_state/` files per the State Update Triggers in SKILL.md:
+After analysis, update the relevant `coaching_state/` files per the Command → File Mapping and state protocols in the root instructions:
 
 1. **Score History**: Add a row with the interview scores, Type: interview, and Hire Signal from the overall assessment.
 2. **Active Coaching Strategy**: Write or update the strategy based on the triage decision (see Step 15 in `references/commands/analyze.md`). Preserve Previous approaches when changing strategy.
@@ -621,4 +621,3 @@ The following pattern metrics are captured inline in the analysis output (Anti-P
 - Top 3 weak competencies
 - Top 3 overused crutches
 - Trend vs. previous analysis (improving/stagnant/declining per dimension)
-

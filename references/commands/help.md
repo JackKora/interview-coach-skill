@@ -4,7 +4,7 @@
 
 When the user types `help`, generate a context-aware command guide — not just a static list.
 
-1. **Read the relevant `coaching_state/` files** to understand where the candidate is in their coaching journey.
+1. **Start from `coaching_state/index.md` Quick Context.** It is the routing summary for `help`; do not load whole state files. To resolve the recommendations and State Summary below, read only the needed headings, counts, or current rows from the routed Profile, Storybank, Scores, Interview Loops, Assets, and Scout Config/Opportunities sections. Skip any section that Quick Context or the user's request already resolves.
 2. **Show the full command guide** (see Output Schema below) with sub-commands and key features for each command.
 3. **Highlight the 2-3 most relevant commands right now** based on coaching state:
    - If no coaching state exists: highlight `kickoff`
@@ -101,7 +101,7 @@ When the user types `help`, generate a context-aware command guide — not just 
 ### Job Discovery
 | Command | What It Does |
 |---|---|
-| `scout` | Automated job search scanner — reads your preconfigured job search URLs (LinkedIn, Indeed, etc.) via Chrome, identifies new listings, scores fit against your profile on a 1-5 scale, and stores results. Surfaces only opportunities above your configured threshold. Requires Chrome extension environment (Cowork). |
+| `scout` | Automated job search scanner — reads your preconfigured job search URLs (LinkedIn, Indeed, etc.) through Claude in Chrome / the Claude Chrome integration or the Codex Chrome extension, whichever browser capability the current host exposes. It identifies new listings, scores fit against your profile on a 1-5 scale, and stores results, surfacing only opportunities above your configured threshold. If neither integration is available, it can process pasted or exported listings instead. |
 
 ### Progress and Tracking
 | Command | What It Does |

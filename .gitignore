@@ -7,10 +7,7 @@
 coaching_state/
 # Legacy single-file state (pre-split backup)
 coaching_state.md
-coaching_state.md.pre-split-backup
-coaching_state.md.backup
+coaching_state.md.pre-split-backup*
+coaching_state.md.backup*
 # Legacy bad fit file location (now lives in coaching_state/)
 opportunities_bad_fit.md
-
-# Active skill file (created by copying SKILL.md during setup)
-CLAUDE.md
