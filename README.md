@@ -1,6 +1,6 @@
 # Interview Coach
 
-A Claude Code-based interview coach that covers the full job search lifecycle — from JD analysis and resume optimization through mock interviews to post-offer negotiation. 24 commands across application materials, interview prep, practice, analysis, and comp coaching. It scores your answers across five dimensions, diagnoses root causes behind weak spots, builds a storybank you can retrieve under pressure, and adapts its coaching to your specific patterns. Not a generic question bank. An adaptive system that gets sharper the more you use it.
+A folder-based interview coach for Claude Code and OpenAI Codex that covers the full job search lifecycle — from JD analysis and resume optimization through mock interviews to post-offer negotiation. It is not installed as a skill: open the repository as your working folder and start coaching. Its 25 commands span application materials, interview prep, practice, analysis, scouting, and compensation coaching. It scores your answers across five dimensions, diagnoses root causes behind weak spots, builds a storybank you can retrieve under pressure, and adapts its coaching to your specific patterns. Not a generic question bank. An adaptive system that gets sharper the more you use it.
 
 Say `kickoff`, share your resume, and you're being coached in under 2 minutes.
 
@@ -28,7 +28,7 @@ Say `kickoff`, share your resume, and you're being coached in under 2 minutes.
 
 **Interview intelligence** — The system learns from your real interview experiences. Every transcript, debrief, and recruiter feedback adds to a personalized knowledge base: question patterns across companies, what works and what doesn't for you specifically, and feedback-outcome correlations. Intelligence data has temporal decay — stale data is flagged, not silently relied on.
 
-**Session continuity** — A persistent `coaching_state/` file tracks your storybank, scores, patterns, drill progression, interview loops, interview intelligence, and calibration state across sessions. Pick up where you left off, weeks later. Saves are automatic.
+**Session continuity** — A persistent `coaching_state/` directory stores focused files for your storybank, scores, patterns, drill progression, interview loops, interview intelligence, and calibration state across sessions. Pick up where you left off, weeks later. Saves are automatic.
 
 **Challenge protocol (Directness Level 5)** — At the highest directness setting, the coach actively challenges you through five lenses: Assumption Audit, Blind Spot Scan, Pre-Mortem, Devil's Advocate, and Strengthening Path. Stories get red-teamed after you add or improve them. Transcripts get challenged. Practice rounds 3+ include a rotating challenge note. Progress reports include a Hard Truth section. Hype includes a pre-mortem before interviews. Rejections get mined for leverage. The system also detects avoidance patterns — if you keep steering away from a weakness, it names it directly. Every challenge ends with a concrete fix. Levels 1-4 are completely unaffected.
 
@@ -56,51 +56,32 @@ Say `kickoff`, share your resume, and you're being coached in under 2 minutes.
 
 ## Quick Start
 
-### Option 1: Claude Code (recommended)
+### 1. Get the repository
 
-1. Clone the repo:
-
-```bash
-git clone https://github.com/noamseg/interview-coach-skill.git
-cd interview-coach-skill
-```
-
-Or [download it as a ZIP](https://github.com/noamseg/interview-coach-skill/archive/refs/heads/main.zip) and unzip.
-
-2. Activate the coach by renaming the skill file:
-
-```bash
-mv SKILL.md CLAUDE.md
-```
-
-3. Open the folder in Claude Code and say `kickoff`.
-
-Requires any paid Claude plan. Also works with Claude Code (terminal), Cursor, or any environment with file system access.
-
-### Option 2: OpenAI Codex
-
-1. Clone the repo:
+Clone the repository:
 
 ```bash
 git clone https://github.com/noamseg/interview-coach-skill.git
 cd interview-coach-skill
 ```
 
-Or [download it as a ZIP](https://github.com/noamseg/interview-coach-skill/archive/refs/heads/main.zip) and unzip.
+Or [download it as a ZIP](https://github.com/noamseg/interview-coach-skill/archive/refs/heads/main.zip) with an extractor that preserves symbolic links. A Git clone is recommended, but verify the shared entry point either way.
 
-2. Activate the coach by renaming the skill file:
+`AGENTS.md` is the canonical instruction file, and `CLAUDE.md` is a symlink to it so Claude Code and Codex read the same instructions without duplicated files or drift. After either clone or ZIP extraction, verify that `CLAUDE.md` resolves to `AGENTS.md`; if it was materialized as a plain file containing only `AGENTS.md`, use a checkout/extractor with symbolic-link support instead of copying the instructions.
 
-```bash
-mv SKILL.md AGENTS.md
-```
+### 2. Open it in your coach
 
-3. Open the folder in Codex and say `kickoff`.
+#### Claude Code
 
-Requires any paid ChatGPT plan.
+Open the repository folder in Claude Code and say `kickoff`. The included `.claude/settings.json` allows file read/write and web research without shell access; no shell permission is required for coaching.
 
----
+#### OpenAI Codex
 
-For both options, the coach will ask for your resume, target role, and timeline — then build your profile, assess your starting point, and give you a prioritized action plan. Everything saves automatically to `coaching_state/` so you pick up where you left off next session.
+Open the repository folder in Codex and say `kickoff`. Choose workspace permissions that let Codex update files inside this folder. The repository does not override your Codex sandbox or approval preferences.
+
+### 3. Start coaching
+
+The coach will ask for your resume, target role, and timeline, then build your profile, assess your starting point, and give you a prioritized action plan. Everything saves automatically to `coaching_state/` so you pick up where you left off next session.
 
 ---
 
@@ -153,7 +134,7 @@ For both options, the coach will ask for your resume, target role, and timeline 
 |---|---|---|
 | `scout` | Scan preconfigured job board URLs, score new listings against your profile, and track opportunities | Scan summary, above-threshold opportunities with fit scores and rationale, dedup against previously seen listings |
 
-Requires Chrome (Cowork with Claude Chrome Extension). Configure your search URLs on first run — supports LinkedIn, BuiltInChicago, Hiring.cafe, ExecThread, and any job board that renders listings as HTML. The system deduplicates across runs, scores fit using your profile + resume + storybank, and stores results in two tiers: above-threshold opportunities for review and below-threshold for dedup only. Token-efficient by design — uses text extraction over screenshots, early termination when no new listings are found, and batch assessment.
+`scout` requires a supported Chrome integration and a signed-in Chrome session: use Claude in Chrome when running Claude Code, or the Codex Chrome extension when running Codex. Without one of those integrations, `scout` is unavailable; every other coaching feature still works. Configure your search URLs on first run — supports LinkedIn, BuiltInChicago, Hiring.cafe, ExecThread, and any job board that renders listings as HTML. The system deduplicates across runs, scores fit using your profile + resume + storybank, and stores results in two tiers: above-threshold opportunities for review and below-threshold for dedup only. Token-efficient by design — uses text extraction over screenshots, early termination when no new listings are found, and batch assessment.
 
 ### Analysis, Tracking, and Post-Interview
 
@@ -409,11 +390,20 @@ Choose during `kickoff`. You can switch later.
 
 ```text
 interview-coach-skill/
-├── SKILL.md                            # Core skill — rename to CLAUDE.md to activate
+├── AGENTS.md                           # Canonical root instructions for the coach
+├── CLAUDE.md -> AGENTS.md              # Claude Code entry point; no duplicated instructions
+├── .claude/
+│   └── settings.json                   # Claude file/web permissions; no shell access
+├── .codex/
+│   └── config.toml                     # Codex live web-search setting
 ├── README.md                           # This file
+├── VERSIONS.md                         # Release history
 ├── LICENSE                             # MIT License
-├── coaching_state/                   # Created on first kickoff (persistent memory, auto-saved)
-└── references/
+├── coaching_state/                     # Generated user data; created and auto-saved after kickoff
+│   ├── index.md                        # State manifest, schema version, and quick context
+│   ├── profile.md                      # Candidate profile and active coaching strategy
+│   └── ...                             # Storybank, scores, interviews, tracking, and other state
+└── references/                         # Instructions loaded on demand
     ├── commands/                       # Per-command workflows (loaded on demand)
     │   ├── kickoff.md
     │   ├── research.md
@@ -440,6 +430,10 @@ interview-coach-skill/
     │   ├── reflect.md
     │   ├── scout.md
     │   └── help.md
+    ├── state-schemas.md                # Exact coaching-state file formats
+    ├── state-migrations.md             # Versioned, backward-compatible state migrations
+    ├── state-maintenance.md            # Archival and long-running state maintenance
+    ├── intent-routing.md               # Multi-step command-sequence routing
     ├── cross-cutting.md                # Shared modules: gap-handling, signal-reading, differentiation, cultural awareness, psychological readiness, cross-command dependencies
     ├── rubrics-detailed.md             # Scoring anchors, root causes, seniority calibration
     ├── role-drills.md                  # Role-specific drills + interviewer archetypes
@@ -482,10 +476,10 @@ Generic LLM interview help gives you the same advice regardless of your patterns
 No. Core workflows are role-agnostic; role drills include PM, Engineering, Design, Data Science, Research, Operations, and Marketing.
 
 **Why is the feedback direct?**
-The skill is intentionally high-candor and evidence-based. It uses strengths-first delivery and self-reflection before critique. It also periodically checks whether the coaching is landing and adapts if not. You can set your feedback directness level (1-5) during kickoff. At Level 5, the Challenge Protocol activates: stories get red-teamed, progress includes a Hard Truth, rejections get mined for leverage, and avoidance patterns are named directly. Levels 1-4 are gentler — same rigor, softer delivery.
+The coach is intentionally high-candor and evidence-based. It uses strengths-first delivery and self-reflection before critique. It also periodically checks whether the coaching is landing and adapts if not. You can set your feedback directness level (1-5) during kickoff. At Level 5, the Challenge Protocol activates: stories get red-teamed, progress includes a Hard Truth, rejections get mined for leverage, and avoidance patterns are named directly. Levels 1-4 are gentler — same rigor, softer delivery.
 
 **How does it work across multiple sessions?**
-The skill writes a `coaching_state/` file that tracks your storybank, scores, patterns, drill progression, interview outcomes, interview loops, and more. At the start of each session, it reads this file and picks up where you left off. Saves happen automatically after every major workflow — not just at session end.
+The coach writes focused files in the generated `coaching_state/` directory to track your storybank, scores, patterns, drill progression, interview outcomes, interview loops, and more. At the start of each session, it reads the state index and picks up where you left off. Saves happen automatically after every major workflow — not just at session end.
 
 ---
 

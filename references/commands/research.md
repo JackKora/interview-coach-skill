@@ -120,7 +120,7 @@ Use the Role-Fit Assessment Module from `references/cross-cutting.md`. Without a
 
 ### Staleness Detection
 
-When `research` is run for a company that already has a research entry in `coaching_state/interviews.md`, check the date:
+When `research` is run for a company and role that already have a research entry in `coaching_state/interviews.md`, match the stable Loop ID or exact company + role and check the date. If the role is unknown and more than one loop matches the company, ask which role before reading or writing a loop.
 - **< 2 weeks old**: "I researched [Company] on [date]. Want me to refresh, or is that still current?"
 - **2-8 weeks old**: "My research on [Company] is [N] weeks old. Companies change — want a refresh? I'll focus on what's new since [date]."
 - **> 8 weeks old**: Auto-refresh. "My research on [Company] is [N] weeks old — that's stale. Let me update it." Run the full research protocol again, noting what changed vs. the previous entry.
@@ -131,7 +131,9 @@ When refreshing, preserve the previous fit verdict and explicitly compare: "Last
 
 After research, save a lightweight entry to `coaching_state/interviews.md` Interview Loops:
 ```
-### [Company Name]
+### [Company Name] — [Role]
+- Loop ID: [stable company-role-cycle ID]
+- Role: [role title]
 - Status: Researched (not yet applied)
 - Fit verdict: [Strong / Investable Stretch / Long-Shot Stretch / Weak]
 - Fit confidence: [Limited — no JD]

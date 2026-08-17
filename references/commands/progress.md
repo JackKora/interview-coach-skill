@@ -17,7 +17,7 @@ The value of `progress` scales with the data available. Before running the full 
 
 ### Sequence
 
-0. **Check Score History and Intelligence size.** If Score History exceeds 15 rows, run the archival protocol from SKILL.md: summarize the oldest entries into a Historical Summary narrative (preserving trend direction, inflection points, and what caused shifts per dimension), then keep only the most recent 10 rows as individual entries. Do the same for Session Log if it exceeds 15 rows. Also check Interview Intelligence archival thresholds (defined in SKILL.md): Question Bank at 30 rows, Effective/Ineffective Patterns at 10 entries, Recruiter/Interviewer Feedback at 15 rows, Company Patterns for closed loops. This keeps the coaching state file lean for long-running engagements.
+0. **Check maintenance without sacrificing history.** Read `references/state-maintenance.md`. Its thresholds only flag navigation candidates; they do not authorize summaries to replace raw data. If archival is useful, append complete records verbatim to `coaching_state/archive.md`, verify the copy and record counts, and only then remove those exact records from the active view. If lossless archival cannot be verified, leave state unchanged and continue `progress`; maintenance is never a prerequisite for the review.
 1. **Check data availability** (see minimum data thresholds above). Adapt the protocol to what's actually possible.
 2. Ask self-reflection first: "How do you think you're progressing? Rate yourself 1-5 on each dimension."
 3. Compare self-assessment to actual coach scores over time (this is the most valuable part).
@@ -238,8 +238,8 @@ Draws from: Score History trends, storybank gaps, avoidance patterns (from Coach
 [from Calibration State — only active root causes, with treatment effectiveness assessment]
 
 ## Intelligence Freshness
-- Question Bank entries flagged as historical (3-6 months): [count]
-- Question Bank entries archived (>6 months): [count]
+- Question Bank entries eligible for review (>3 months, only when the active table exceeds 30 rows): [count]
+- Question Bank entries moved verbatim to archive this review: [count and archive batch IDs, or "none"]
 - Company Patterns flagged as stale (>6 months): [list companies]
 - Patterns needing re-test (>3 months old): [list]
 

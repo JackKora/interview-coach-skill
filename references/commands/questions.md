@@ -16,7 +16,7 @@ Adapt questions to where the candidate is in the interview loop:
 
 **Stage detection logic** (in priority order):
 1. If the user specified a stage in the command (e.g., `questions hiring manager`), use that.
-2. If `coaching_state/interviews.md` has an active Interview Loop for a company with a known next round, use that stage.
+2. If `coaching_state/interviews.md` has an active exact Loop ID or company + role with a known next round, use that stage. Disambiguate multiple matches before reading.
 3. If a `prep` brief was recently generated, infer from the format identified there.
 4. If none of the above, ask: "What stage is this for? Phone screen, hiring manager, final round, or peer interview? The questions I generate will be very different depending on who you're talking to."
 
@@ -55,5 +55,5 @@ Flag these common mistakes:
 ### Coaching State Integration
 
 After generating questions, save the top 3 to `coaching_state/interviews.md` so other commands can reference them:
-- **In Interview Loops** (if company-specific): Add `- Prepared questions: [top 3, one-line each]` under the relevant company entry.
+- **In Interview Loops** (if company-specific): Match the stable Loop ID or exact company + role, then save `Prepared questions by round` under the exact round ID/type. If multiple loops or rounds match, ask which one before writing. Never update by company name alone.
 - **Why**: `hype` generates its own "3 Questions To Ask" section. If `questions` has already been run for this interview, `hype` should pull from those (already tailored) rather than generating fresh ones. This prevents contradictory advice between commands.

@@ -71,7 +71,7 @@ You know these risks. Now set them aside and go execute.
 - One thing to remember in the room:
 
 ## 10-Minute Warmup Routine
-[Check Interview Loops for saved format data from `prep` or Format Discovery. If the format is a presentation round and `present` was run, pull the key structural decisions and timing calibration from Presentation Prep for the warmup. Tailor the warmup to the format: a presentation round warmup focuses on opening delivery. A system design warmup focuses on scoping out loud. A behavioral screen warmup focuses on story retrieval speed.]
+[Match the exact Loop ID or company + role + round before reading saved format data from `prep` or Format Discovery; disambiguate multiple matches. If it is a presentation round and `present` was run, read only Presentation Prep with the same Loop ID and Round ID/type, then pull its key structural decisions and timing calibration. Tailor the warmup to the format: a presentation round warmup focuses on opening delivery. A system design warmup focuses on scoping out loud. A behavioral screen warmup focuses on story retrieval speed.]
 1. Read this hype reel out loud once.
 2. [Format-specific drill]: Behavioral → pick your weakest story and deliver the 60-second version out loud. Presentation → deliver your opening 30 seconds out loud. System design → practice scoping a simple problem out loud for 60 seconds. Panel → mentally rehearse switching between interviewer styles.
 3. Review the 3x3 above — don't memorize, just refresh.
@@ -109,7 +109,7 @@ These techniques come from multiple experts on Lenny's Podcast. The coach should
 
 #### Questions Sourcing
 
-If `questions` was previously run for this company (check Interview Loops for saved prepared questions), pull from those for the 3x3. Don't regenerate — consistency matters.
+If `questions` was previously run for the exact Loop ID or company + role + round, pull that round's saved prepared questions for the 3x3. Disambiguate multiple matching loops or rounds; never select questions by company alone. Don't regenerate — consistency matters.
 
 #### Recovery Section Sourcing
 

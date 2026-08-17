@@ -1,5 +1,17 @@
 # kickoff — Setup Workflow
 
+### Step 0: Existing-State Gate
+
+Before collecting kickoff answers, check for any existing state: a `coaching_state/` directory containing any file, legacy `coaching_state.md`, or archived cycle data. **If anything exists, do not initialize or overwrite state.** Complete only the safe compatibility adoption in `references/state-migrations.md` when required, then ask one question:
+
+> "I found existing coaching history. Do you want to resume that cycle, or start a new search cycle while preserving it?"
+
+- **Resume/build on the existing cycle:** read the current Profile and Quick Context, then use the Mid-Search Profile Update path below. Patch only changed fields and preserve every other section and historical record. Never run Step 3. After the reconciled Profile, Status, timeline, active loops, pending outcomes, and Quick Context validate, replace the import gate with `Cycle status: active_current_search`.
+- **Start a new cycle:** before changing active state, copy every top-level state file byte-for-byte to a new immutable `coaching_state/archive/cycles/[cycle-id]/` directory as defined in `references/state-schemas.md`. Include and verify a manifest of paths, byte counts, and SHA-256 hashes. Write the prospective new active files, including `Cycle status: active_current_search`, to a separate staging directory and validate their required headings and tables. Only after both verifications succeed may the staged files replace the active top-level files. Preserve `.snapshots/` and `archive/cycles/` throughout. Ask which reusable facts or stories should carry forward; copy only those the candidate selects, while the complete prior cycle remains in its verified archive.
+- **Unclear or conflicting state:** stop initialization and resolve which state is authoritative. Never guess, merge two cycles silently, or treat staleness as permission to reset.
+
+When there is no state at all, proceed to Step 1. The presence of old, sparse, imported, or archived state still activates this gate.
+
 ### Step 1: Coaching Configuration
 
 Collect:
@@ -88,7 +100,7 @@ After resume analysis, cross-reference the candidate's profile against their sta
 
 ### Step 3: Initialize Coaching State
 
-Write the initial `coaching_state/` directory files (see SKILL.md Session State System for format) with:
+Run this step only when Step 0 found no state, or after a new-cycle archive and staged replacement have both been verified. Read `references/state-schemas.md`, then write the initial `coaching_state/` directory files in those exact formats with:
 - Profile section populated from Steps 1-2
 - Resume Analysis section populated from Step 2.5 output (positioning strengths, likely concerns, career narrative gaps, story seeds). This is critical — every downstream command (`concerns`, `prep`, `stories`, `hype`) benefits from having the resume analysis persisted. Don't lose this work.
 - Empty storybank (or populated if initial stories were provided — if initial stories are provided, write full STAR text to the Story Details section)
@@ -104,14 +116,14 @@ Write the initial `coaching_state/` directory files (see SKILL.md Session State 
 
 Candidates' targets often evolve mid-search — they discover they prefer a different role type, shift seniority targets based on market feedback, or pivot domains after informational interviews. When a candidate returns to `kickoff` or indicates their target has changed:
 
-1. **Don't restart from scratch.** Ask: "What's changed? Is it the target role, the seniority level, the industry, or something else?"
+1. **Don't restart from scratch.** This path is used only after Step 0 selected resume/build on the existing cycle. Ask: "What's changed? Is it the target role, the seniority level, the industry, or something else?"
 2. **Show what carries over**: "Your storybank, practice scores, and coaching patterns all still apply. Here's what changes with your new target:"
 3. **Update Profile in `coaching_state/profile.md`**: Target role, seniority band, career transition status (if newly triggered).
 4. **Flag downstream impacts**:
    - If target role changed: `concerns` needs re-running (different role = different concerns). `pitch` positioning statement needs updating. `resume` may need re-targeting.
    - If seniority changed: `prep` scoring weights shift. Practice drill calibration may need adjustment.
    - If domain changed: New domain gap becomes a primary concern. Bridge stories needed.
-5. **Preserve history**: Don't delete old target data — move it to a "Previous targets" section. Score history, practice data, and storybank remain valid.
+5. **Preserve history**: Don't delete old target data—copy its exact field text into a dated "Previous targets" entry before replacing the active target field. Score history, practice data, and storybank remain unchanged.
 
 Output a brief "Profile Update Summary" showing what changed, what carries over, and the 2-3 highest-priority actions for the new target.
 

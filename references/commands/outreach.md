@@ -81,7 +81,7 @@ Pull from the relevant `coaching_state/` files:
 - Profile from `coaching_state/profile.md` (target role, seniority band)
 - Resume Analysis from `coaching_state/profile.md` (fallback positioning if no Positioning Statement)
 - Storybank from `coaching_state/storybank.md` (earned secrets for hooks)
-- Interview Loops from `coaching_state/interviews.md` (company context for targeted outreach)
+- Interview Loops from `coaching_state/interviews.md` (exact company + role context for role-targeted outreach; disambiguate multiple loops, or explicitly synthesize company-wide context for general relationship outreach)
 - LinkedIn Analysis from `coaching_state/assets.md` (profile quality gate)
 - Differentiation data from `coaching_state/profile.md` (from Active Coaching Strategy)
 

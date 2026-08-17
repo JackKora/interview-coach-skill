@@ -71,7 +71,7 @@ Pull from the relevant `coaching_state/` files:
 - Storybank from `coaching_state/storybank.md` (for earned secrets and quantified outcomes to feed into bullet rewrites)
 - Active Coaching Strategy from `coaching_state/profile.md` (bottleneck — if Differentiation is the gap, emphasize that in resume too)
 - LinkedIn Analysis from `coaching_state/assets.md` (if exists — for cross-surface consistency at Deep level)
-- Interview Loops from `coaching_state/interviews.md` (for JDs — enables targeted optimization)
+- Interview Loops from `coaching_state/interviews.md` (for JD-targeted optimization, match the exact company + role or Loop ID and disambiguate duplicates; for a general master resume, synthesize across roles deliberately rather than selecting one company record implicitly)
 - Positioning Statement from `coaching_state/assets.md` (if exists — use as consistency reference for summary rewrite)
 
 ### Step 3: ATS Compatibility Scan
@@ -122,7 +122,7 @@ Rate: **Strong** / **Moderate** / **Weak**
 - Scope escalation: Does impact grow across roles? (individual → team → department → organization)
 - Strategic visibility: Senior roles should show strategic thinking, not just execution
 - Progression narrative: Does the resume tell a coherent story of growth?
-- Cross-reference seniority bands from SKILL.md Core Rubric
+- Cross-reference the seniority calibration bands in the root instructions
 
 **4. Skills Section**
 - Keyword coverage: Target role keywords present?
